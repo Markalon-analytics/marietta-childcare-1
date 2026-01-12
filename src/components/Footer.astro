@@ -4,71 +4,89 @@ const currentYear = new Date().getFullYear();
 
 <footer class="bg-white dark:bg-background-dark border-t border-[#f0f4f3] dark:border-white/10 pt-20 pb-10 px-6 lg:px-20">
   <div class="max-w-[1280px] mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-16">
       <div>
         <div class="flex items-center gap-3 mb-6">
           <div class="size-8 bg-primary rounded-full flex items-center justify-center text-white">
-            <span class="material-symbols-outlined text-[20px]">child_care</span>
+            <svg class="w-5 h-5 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="10" r="5" />
+              <rect x="16" y="16" width="8" height="8" rx="1" />
+              <rect x="10" y="17" width="5" height="3" rx="1.5" />
+              <rect x="25" y="17" width="5" height="3" rx="1.5" />
+              <rect x="14" y="25" width="3" height="8" rx="1.5" />
+              <rect x="23" y="25" width="3" height="8" rx="1.5" />
+            </svg>
           </div>
           <h2 class="text-xl font-bold">Marietta Childcare</h2>
         </div>
         <p class="text-[#111815]/60 dark:text-white/60 mb-6 leading-relaxed">
           Nurturing the next generation with love, safety, and a passion for early education since 1995.
         </p>
-        <div class="flex gap-4">
-          <a class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
-            <span class="material-symbols-outlined">public</span>
+        <div class="flex gap-3">
+          <a class="text-primary hover:text-primary/70 transition-colors" href="#" title="Website">
+            <span class="material-symbols-outlined">language</span>
           </a>
-          <a class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
-            <span class="material-symbols-outlined">chat</span>
+          <a class="text-primary hover:text-primary/70 transition-colors" href="#" title="Facebook">
+            <span class="material-symbols-outlined">groups</span>
           </a>
-          <a class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
-            <span class="material-symbols-outlined">alternate_email</span>
+          <a class="text-primary hover:text-primary/70 transition-colors" href="#" title="Email">
+            <span class="material-symbols-outlined">mail</span>
           </a>
         </div>
       </div>
 
       <div>
-        <h4 class="font-black text-lg mb-6">Quick Links</h4>
-        <ul class="space-y-4 text-[#111815]/70 dark:text-white/70">
-          <li><a class="hover:text-primary transition-colors" href="#">Our Philosophy</a></li>
-          <li><a class="hover:text-primary transition-colors" href="#">Meet the Teachers</a></li>
-          <li><a class="hover:text-primary transition-colors" href="#">Career Opportunities</a></li>
-          <li><a class="hover:text-primary transition-colors" href="#">Enrollment Process</a></li>
+        <h4 class="font-black text-lg mb-6">Programs</h4>
+        <ul class="space-y-2 text-sm text-[#111815]/70 dark:text-white/70">
+          <li><a class="hover:text-primary transition-colors" href="/programs/infant-care">Infant Care</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/programs/toddler-program">Toddler Program</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/programs/preschool">Preschool</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/programs/pre-k">Pre-Kindergarten</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/programs/after-school">After-School</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-black text-lg mb-6">More Programs</h4>
+        <ul class="space-y-2 text-sm text-[#111815]/70 dark:text-white/70">
+          <li><a class="hover:text-primary transition-colors" href="/programs/summer-camp">Summer Camp</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/programs/school-break-care">School Break Care</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/programs/full-time-care">Full-Time Care</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/programs/part-time-care">Part-Time Care</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/programs/special-needs">Special Needs</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-black text-lg mb-6">Service Areas</h4>
+        <ul class="space-y-2 text-sm text-[#111815]/70 dark:text-white/70">
+          <li><a class="hover:text-primary transition-colors" href="/service-areas/downtown-marietta">Downtown Marietta</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/service-areas/north-marietta">North Marietta</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/service-areas/south-marietta">South Marietta</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/service-areas/kennesaw">Kennesaw</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/service-areas">All Areas</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-black text-lg mb-6">Resources</h4>
+        <ul class="space-y-2 text-sm text-[#111815]/70 dark:text-white/70">
+          <li><a class="hover:text-primary transition-colors" href="/resources/child-development">Child Development</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/resources/parenting-tips">Parenting Tips</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/resources/nutrition-guide">Nutrition Guide</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/resources/school-readiness">School Readiness</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/blog">Parent Resources</a></li>
         </ul>
       </div>
 
       <div>
         <h4 class="font-black text-lg mb-6">Contact Us</h4>
-        <ul class="space-y-4 text-[#111815]/70 dark:text-white/70">
-          <li class="flex items-start gap-3">
-            <span class="material-symbols-outlined text-primary text-[20px]">location_on</span>
-            123 Peach Street, Marietta, GA 30060
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="material-symbols-outlined text-primary text-[20px]">phone</span>
-            (770) 555-0123
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="material-symbols-outlined text-primary text-[20px]">mail</span>
-            hello@mariettachildcare.com
-          </li>
+        <ul class="space-y-3 text-sm text-[#111815]/70 dark:text-white/70">
+          <li>123 Peach Street<br/>Marietta, GA 30060</li>
+          <li><a href="tel:(770) 555-0123" class="hover:text-primary transition-colors">(770) 555-0123</a></li>
+          <li><a href="mailto:hello@mariettachildcare.com" class="hover:text-primary transition-colors">hello@mariettachildcare.com</a></li>
+          <li><a href="/contact" class="hover:text-primary transition-colors font-bold">Schedule a Tour</a></li>
         </ul>
-      </div>
-
-      <div>
-        <h4 class="font-black text-lg mb-6">Newsletter</h4>
-        <p class="text-sm text-[#111815]/60 dark:text-white/60 mb-4">Get early education tips and center updates.</p>
-        <form class="flex flex-col gap-3">
-          <input
-            class="w-full h-12 px-6 rounded-full bg-[#f0f4f3] dark:bg-white/5 border-none focus:ring-2 focus:ring-primary"
-            placeholder="Email address"
-            type="email"
-          />
-          <button class="w-full h-12 bg-primary text-white font-bold rounded-full hover:bg-primary/90 transition-all">
-            Subscribe
-          </button>
-        </form>
       </div>
     </div>
 

@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="About Us - Marietta Childcare"
+  description="Learn about Marietta Childcare's mission, values, educators, and commitment to quality early childhood education.">
+  <section class="relative py-32 overflow-hidden w-screen -ml-[calc((100vw-100%)/2)]">
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="/images/Background_Images/educator_helping_toddler_jacket_background.jpg" 
+        alt="Educator with child" 
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/40"></div>
+    </div>
+    <div class="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-20">
+      <h1 class="text-4xl lg:text-6xl font-black mb-6 text-white drop-shadow-lg">About Marietta Childcare</h1>
+      <p class="text-lg mb-12 max-w-2xl text-white drop-shadow-md">Learn about our mission, values, and commitment to quality early childhood education since 1995.</p>
+    </div>
+  </section>
+
+  <section class="py-20 px-6 lg:px-20">
+    <div class="max-w-[1280px] mx-auto">
+      <div class="prose prose-lg max-w-3xl mb-12">
+        <p>
+          Marietta Childcare has been nurturing the next generation with love, safety, and a passion for early education since 1995. Marietta Childcare serves over 500 families across the Marietta, Georgia community, providing comprehensive childcare and educational programs for infants through school-age children.
+        </p>
+
+        <h2>Our Mission</h2>
+        <p>
+          Marietta Childcare's mission is to create a safe, nurturing environment where every child learns, grows, and thrives. Marietta Childcare believes that quality early childhood education forms the foundation for lifelong success and development.
+        </p>
+
+        <h2>Our Values</h2>
+        <p>
+          Marietta Childcare is committed to five core values: safety, learning, growth, community, and compassion. These values guide every decision Marietta Childcare makes regarding curriculum development, educator training, and family support.
+        </p>
+
+        <h2>Educator Credentials & Training</h2>
+        <p>
+          Marietta Childcare employs highly qualified educators who hold certifications in early childhood education, child development, and CPR/First Aid. All educators at Marietta Childcare undergo comprehensive background checks and participate in ongoing professional development training.
+        </p>
+
+        <h2>Facility Overview</h2>
+        <p>
+          Marietta Childcare operates a state-of-the-art facility located at 123 Peach Street, Marietta, GA 30060. The facility features age-appropriate classrooms, outdoor learning spaces, a full kitchen for nutritious meal preparation, and secure entry systems for child safety.
+        </p>
+
+        <h2>Community Commitment</h2>
+        <p>
+          Marietta Childcare is deeply committed to the Marietta community. Marietta Childcare partners with local schools, participates in community events, and supports families through educational resources and parent engagement programs.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div class="bg-primary/5 p-6 rounded-lg">
+          <h3 class="font-bold text-lg mb-2">500+ Families Served</h3>
+          <p class="text-sm">Trusted by families across Marietta and surrounding communities</p>
+        </div>
+        <div class="bg-secondary/5 p-6 rounded-lg">
+          <h3 class="font-bold text-lg mb-2">30+ Years Experience</h3>
+          <p class="text-sm">Decades of expertise in early childhood education and care</p>
+        </div>
+        <div class="bg-primary/5 p-6 rounded-lg">
+          <h3 class="font-bold text-lg mb-2">Certified Educators</h3>
+          <p class="text-sm">All staff hold professional certifications and ongoing training</p>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-lg text-center">
+        <h2 class="text-2xl font-bold mb-4">Ready to Learn More?</h2>
+        <p class="mb-6">Schedule a tour of Marietta Childcare and see our facility firsthand.</p>
+        <a href="/contact" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform">
+          Schedule a Tour
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

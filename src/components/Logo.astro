@@ -1,0 +1,32 @@
+---
+interface Props {
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { size = 'md' } = Astro.props;
+
+const sizeMap = {
+  sm: 'w-6 h-6',
+  md: 'w-10 h-10',
+  lg: 'w-12 h-12',
+};
+---
+
+<svg
+  class={`${sizeMap[size]} text-white fill-current`}
+  viewBox="0 0 40 40"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Head -->
+  <circle cx="20" cy="10" r="5" />
+  <!-- Body -->
+  <rect x="16" y="16" width="8" height="8" rx="1" />
+  <!-- Left arm -->
+  <rect x="10" y="17" width="5" height="3" rx="1.5" />
+  <!-- Right arm -->
+  <rect x="25" y="17" width="5" height="3" rx="1.5" />
+  <!-- Left leg -->
+  <rect x="14" y="25" width="3" height="8" rx="1.5" />
+  <!-- Right leg -->
+  <rect x="23" y="25" width="3" height="8" rx="1.5" />
+</svg>

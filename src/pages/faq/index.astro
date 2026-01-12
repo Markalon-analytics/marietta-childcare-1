@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="FAQ - Marietta Childcare"
+  description="Frequently asked questions about Marietta Childcare's programs, policies, curriculum, safety, and enrollment.">
+  <section class="relative py-32 overflow-hidden w-screen -ml-[calc((100vw-100%)/2)]">
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="/images/Background_Images/girl_reading_book_quiet_corner_background.jpg" 
+        alt="Frequently asked questions" 
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/40"></div>
+    </div>
+    <div class="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-20">
+      <h1 class="text-4xl lg:text-6xl font-black mb-6 text-white drop-shadow-lg">Frequently Asked Questions</h1>
+      <p class="text-lg mb-12 max-w-2xl text-white drop-shadow-md">Find answers to common questions about our programs, policies, curriculum, safety, and enrollment process.</p>
+    </div>
+  </section>
+
+  <section class="py-20 px-6 lg:px-20">
+    <div class="max-w-[1280px] mx-auto">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <a href="/faq/curriculum" class="bg-white border-2 border-primary/20 hover:border-primary p-6 rounded-lg transition-all hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-2">What's Your Curriculum?</h3>
+          <p class="text-sm mb-4">Learn about our educational philosophy, curriculum approach, and how we prepare children for kindergarten.</p>
+          <span class="text-primary font-bold">Learn More →</span>
+        </a>
+
+        <a href="/faq/enrollment-process" class="bg-white border-2 border-secondary/20 hover:border-secondary p-6 rounded-lg transition-all hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-2">What's the Enrollment Process?</h3>
+          <p class="text-sm mb-4">Steps to enroll, required documents, timeline, and orientation procedures for new families.</p>
+          <span class="text-secondary font-bold">Learn More →</span>
+        </a>
+
+        <a href="/faq/hours-and-schedule" class="bg-white border-2 border-primary/20 hover:border-primary p-6 rounded-lg transition-all hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-2">What Are Your Hours?</h3>
+          <p class="text-sm mb-4">Operating hours, flexible scheduling options, and extended care availability for families.</p>
+          <span class="text-primary font-bold">Learn More →</span>
+        </a>
+
+        <a href="/faq/how-much-childcare-cost" class="bg-white border-2 border-secondary/20 hover:border-secondary p-6 rounded-lg transition-all hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-2">How Much Does Childcare Cost?</h3>
+          <p class="text-sm mb-4">Pricing information, payment options, financial assistance programs, and tuition rates.</p>
+          <span class="text-secondary font-bold">Learn More →</span>
+        </a>
+
+        <a href="/faq/nutrition-meals" class="bg-white border-2 border-primary/20 hover:border-primary p-6 rounded-lg transition-all hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-2">What About Meals and Snacks?</h3>
+          <p class="text-sm mb-4">Meal planning, nutrition standards, allergy accommodations, and healthy snack options.</p>
+          <span class="text-primary font-bold">Learn More →</span>
+        </a>
+
+        <a href="/faq/parent-communication" class="bg-white border-2 border-secondary/20 hover:border-secondary p-6 rounded-lg transition-all hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-2">How Do You Communicate with Parents?</h3>
+          <p class="text-sm mb-4">Parent communication methods, daily updates, and parent-teacher conferences for family engagement.</p>
+          <span class="text-secondary font-bold">Learn More →</span>
+        </a>
+
+        <a href="/faq/safety-security" class="bg-white border-2 border-primary/20 hover:border-primary p-6 rounded-lg transition-all hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-2">How Safe Is Your Facility?</h3>
+          <p class="text-sm mb-4">Safety protocols, security measures, and emergency procedures to protect children.</p>
+          <span class="text-primary font-bold">Learn More →</span>
+        </a>
+
+        <a href="/faq/teacher-qualifications" class="bg-white border-2 border-secondary/20 hover:border-secondary p-6 rounded-lg transition-all hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-2">What Are Your Teacher Qualifications?</h3>
+          <p class="text-sm mb-4">Educator credentials, training, certifications, and background checks ensuring quality care.</p>
+          <span class="text-secondary font-bold">Learn More →</span>
+        </a>
+
+        <a href="/faq/sick-child-policy" class="bg-white border-2 border-primary/20 hover:border-primary p-6 rounded-lg transition-all hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-2">What's Your Sick Child Policy?</h3>
+          <p class="text-sm mb-4">Illness guidelines, when to keep children home, and health requirements for enrollment.</p>
+          <span class="text-primary font-bold">Learn More →</span>
+        </a>
+
+        <a href="/faq/transition-to-kindergarten" class="bg-white border-2 border-secondary/20 hover:border-secondary p-6 rounded-lg transition-all hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-2">How Do You Prepare for Kindergarten?</h3>
+          <p class="text-sm mb-4">Transition support, kindergarten readiness activities, and parent resources for school success.</p>
+          <span class="text-secondary font-bold">Learn More →</span>
+        </a>
+      </div>
+
+      <div class="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-lg text-center">
+        <h2 class="text-2xl font-bold mb-4">Still Have Questions?</h2>
+        <p class="mb-6">Marietta Childcare welcomes your questions and concerns. Contact us to speak with an enrollment advisor or schedule a tour to learn more about our programs and policies.</p>
+        <a href="/contact" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform">Schedule a Tour</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

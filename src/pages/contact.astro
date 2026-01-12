@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Schedule a Tour - Marietta Childcare"
+  description="Schedule a tour at Marietta Childcare and learn about our programs, facilities, and approach to early childhood education.">
+  <section class="relative py-32 overflow-hidden w-screen -ml-[calc((100vw-100%)/2)]">
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="/images/Background_Images/diverse_children_sharing_toy_background.jpg" 
+        alt="Schedule a tour" 
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/40"></div>
+    </div>
+    <div class="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-20">
+      <h1 class="text-4xl lg:text-6xl font-black mb-6 text-white drop-shadow-lg">Schedule a Tour</h1>
+      <p class="text-lg mb-12 max-w-2xl text-white drop-shadow-md">Visit Marietta Childcare and experience our programs, facilities, and approach to early childhood education.</p>
+    </div>
+  </section>
+
+  <section class="py-20 px-6 lg:px-20">
+    <div class="max-w-[1280px] mx-auto">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+        <div>
+          <h2 class="text-2xl font-bold mb-6">Contact Marietta Childcare</h2>
+          
+          <div class="space-y-6 mb-8">
+            <div>
+              <h3 class="font-bold mb-1 text-gray-900">Location</h3>
+              <p class="text-gray-600">123 Peach Street<br/>Marietta, GA 30060</p>
+            </div>
+
+            <div>
+              <h3 class="font-bold mb-1 text-gray-900">Phone</h3>
+              <p class="text-gray-600">(770) 555-0123</p>
+            </div>
+
+            <div>
+              <h3 class="font-bold mb-1 text-gray-900">Email</h3>
+              <p class="text-gray-600">hello@mariettachildcare.com</p>
+            </div>
+
+            <div>
+              <h3 class="font-bold mb-1 text-gray-900">Hours</h3>
+              <p class="text-gray-600">Monday - Friday: 6:30 AM - 6:30 PM<br/>Closed on weekends and holidays</p>
+            </div>
+          </div>
+
+          <div class="bg-primary/5 p-6 rounded-lg">
+            <h3 class="font-bold mb-2 text-gray-900">Tour Booking</h3>
+            <p class="text-sm mb-4 text-gray-600">Schedule a tour of Marietta Childcare to see our facility, meet our educators, and learn about our programs. Tours typically last 45 minutes to 1 hour.</p>
+          </div>
+        </div>
+
+        <div>
+          <form class="bg-white border-2 border-primary/20 p-8 rounded-lg">
+            <h2 class="text-2xl font-bold mb-6">Schedule Your Tour</h2>
+            
+            <div class="space-y-4">
+              <div>
+                <label class="block font-bold mb-2">Full Name</label>
+                <input type="text" placeholder="Your name" class="w-full border border-gray-300 rounded px-4 py-2" required />
+              </div>
+
+              <div>
+                <label class="block font-bold mb-2">Email Address</label>
+                <input type="email" placeholder="your@email.com" class="w-full border border-gray-300 rounded px-4 py-2" required />
+              </div>
+
+              <div>
+                <label class="block font-bold mb-2">Phone Number</label>
+                <input type="tel" placeholder="(770) 555-0000" class="w-full border border-gray-300 rounded px-4 py-2" required />
+              </div>
+
+              <div>
+                <label class="block font-bold mb-2">Child's Age</label>
+                <select class="w-full border border-gray-300 rounded px-4 py-2" required>
+                  <option>Select age range</option>
+                  <option>Infant (0-12 months)</option>
+                  <option>Toddler (12-36 months)</option>
+                  <option>Preschool (3-5 years)</option>
+                  <option>School-Age (5+ years)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block font-bold mb-2">Preferred Tour Date</label>
+                <input type="date" class="w-full border border-gray-300 rounded px-4 py-2" required />
+              </div>
+
+              <div>
+                <label class="block font-bold mb-2">Message</label>
+                <textarea placeholder="Tell us about your childcare needs..." class="w-full border border-gray-300 rounded px-4 py-2 h-24" required></textarea>
+              </div>
+
+              <button type="submit" class="w-full bg-primary text-white font-bold py-3 rounded-full hover:scale-105 transition-transform">
+                Schedule Tour
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-lg">
+        <h2 class="text-2xl font-bold mb-4">What to Expect on Your Tour</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div>
+            <h3 class="font-bold mb-2">Facility Overview</h3>
+            <p class="text-sm">See our classrooms, outdoor learning spaces, and safety features during your tour of Marietta Childcare.</p>
+          </div>
+          <div>
+            <h3 class="font-bold mb-2">Meet Our Team</h3>
+            <p class="text-sm">Meet our educators and learn about their qualifications and experience at Marietta Childcare.</p>
+          </div>
+          <div>
+            <h3 class="font-bold mb-2">Program Details</h3>
+            <p class="text-sm">Discuss your child's specific needs and learn how Marietta Childcare can support their development.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
