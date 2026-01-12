@@ -1,0 +1,83 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-white dark:bg-background-dark border-t border-[#f0f4f3] dark:border-white/10 pt-20 pb-10 px-6 lg:px-20">
+  <div class="max-w-[1280px] mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div>
+        <div class="flex items-center gap-3 mb-6">
+          <div class="size-8 bg-primary rounded-full flex items-center justify-center text-white">
+            <span class="material-symbols-outlined text-[20px]">child_care</span>
+          </div>
+          <h2 class="text-xl font-bold">Marietta Childcare</h2>
+        </div>
+        <p class="text-[#111815]/60 dark:text-white/60 mb-6 leading-relaxed">
+          Nurturing the next generation with love, safety, and a passion for early education since 1995.
+        </p>
+        <div class="flex gap-4">
+          <a class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+            <span class="material-symbols-outlined">public</span>
+          </a>
+          <a class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+            <span class="material-symbols-outlined">chat</span>
+          </a>
+          <a class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+            <span class="material-symbols-outlined">alternate_email</span>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-black text-lg mb-6">Quick Links</h4>
+        <ul class="space-y-4 text-[#111815]/70 dark:text-white/70">
+          <li><a class="hover:text-primary transition-colors" href="#">Our Philosophy</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">Meet the Teachers</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">Career Opportunities</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">Enrollment Process</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-black text-lg mb-6">Contact Us</h4>
+        <ul class="space-y-4 text-[#111815]/70 dark:text-white/70">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-[20px]">location_on</span>
+            123 Peach Street, Marietta, GA 30060
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-[20px]">phone</span>
+            (770) 555-0123
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-[20px]">mail</span>
+            hello@mariettachildcare.com
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-black text-lg mb-6">Newsletter</h4>
+        <p class="text-sm text-[#111815]/60 dark:text-white/60 mb-4">Get early education tips and center updates.</p>
+        <form class="flex flex-col gap-3">
+          <input
+            class="w-full h-12 px-6 rounded-full bg-[#f0f4f3] dark:bg-white/5 border-none focus:ring-2 focus:ring-primary"
+            placeholder="Email address"
+            type="email"
+          />
+          <button class="w-full h-12 bg-primary text-white font-bold rounded-full hover:bg-primary/90 transition-all">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="pt-8 border-t border-[#f0f4f3] dark:border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#111815]/50 dark:text-white/50">
+      <p>© {currentYear} Marietta Childcare. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a class="hover:underline" href="#">Privacy Policy</a>
+        <a class="hover:underline" href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>

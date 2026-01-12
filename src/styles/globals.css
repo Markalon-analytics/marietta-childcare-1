@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap');
+
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+
+  body {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .gradient-mesh {
+    background-color: #f6f8f7;
+    background-image:
+      radial-gradient(at 0% 0%, rgba(15, 184, 119, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(251, 191, 36, 0.15) 0px, transparent 50%);
+  }
+
+  .dark .gradient-mesh {
+    background-color: #10221b;
+    background-image:
+      radial-gradient(at 0% 0%, rgba(15, 184, 119, 0.2) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(251, 191, 36, 0.1) 0px, transparent 50%);
+  }
+}
