@@ -7,11 +7,11 @@ import { images, siteInfo } from '../data/site';
 
 <BaseLayout
   title="Schedule a Tour | Marietta Childcare"
-  description="Schedule a Marietta child care tour, call the center, or ask about current openings for infants, toddlers, preschool, pre-K, and school-age care."
+  description="Schedule a Marietta child care tour or call about infant care, toddler care, preschool, pre-K, and school-age care."
 >
   <PageHero
     title="Schedule a Tour"
-    description="Tell us your child's age, your preferred start date, and what your family needs from child care. We will help you ask the right questions before you choose."
+    description="Tell us your child's age, your preferred start date, and what your week needs from child care. We will help you see what the day could look like."
     image={images.dropoff}
     eyebrow="Contact"
   />
@@ -40,7 +40,7 @@ import { images, siteInfo } from '../data/site';
         <input type="hidden" name="form-name" value="tour-request" />
         <h2 class="text-3xl font-black">Tour request</h2>
         <p class="mt-3 text-[#111815]/70">
-          Share the basics and the questions you want answered. You can also call {siteInfo.phoneLabel}.
+          Share the basics and anything you want covered. You can also call {siteInfo.phoneLabel}.
         </p>
 
         <div class="mt-8 grid gap-5 md:grid-cols-2">
@@ -73,8 +73,8 @@ import { images, siteInfo } from '../data/site';
             <input name="start_timing" type="text" placeholder="Example: August, next month, or as soon as possible" class="mt-2 w-full rounded border border-gray-300 px-4 py-3 font-normal" />
           </label>
           <label class="block font-bold md:col-span-2">
-            What would you like to ask?
-            <textarea name="message" class="mt-2 h-32 w-full rounded border border-gray-300 px-4 py-3 font-normal" placeholder="Tell us about schedule, tuition, allergies, school pickup, or anything else you want covered on the tour."></textarea>
+            What should we know?
+            <textarea name="message" class="mt-2 h-32 w-full rounded border border-gray-300 px-4 py-3 font-normal" placeholder="Tell us about schedule, tuition, allergies, school pickup, meals, or anything else you want covered on the tour."></textarea>
           </label>
         </div>
 
@@ -87,11 +87,11 @@ import { images, siteInfo } from '../data/site';
 
   <section class="pb-16">
     <div class="rounded-lg bg-[#10221b] p-8 text-white">
-      <h2 class="text-3xl font-black">What to ask during the tour</h2>
+      <h2 class="text-3xl font-black">What to cover during the tour</h2>
       <div class="mt-6 grid gap-5 md:grid-cols-3">
-        <p class="text-white/80">Ask how the daily schedule changes for infants, toddlers, preschoolers, and school-age children.</p>
-        <p class="text-white/80">Ask how parent updates, pickup authorization, meals, rest, and sick-child rules work.</p>
-        <p class="text-white/80">Ask what openings are available for your child's age and start date.</p>
+        <p class="text-white/80">See how the daily schedule changes for infants, toddlers, preschoolers, and school-age children.</p>
+        <p class="text-white/80">Cover parent updates, pickup authorization, meals, rest, and sick-child rules.</p>
+        <p class="text-white/80">Bring your child's age and start date so open classroom space can be discussed directly.</p>
       </div>
     </div>
   </section>

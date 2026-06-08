@@ -9,26 +9,26 @@ const featuredResources = resourcePages.slice(0, 4);
 const homeFaqs = [
   {
     q: 'What are your hours?',
-    a: `The center is open ${siteInfo.hoursLabel}. Ask about holiday closures and classroom-specific schedule notes when you request a tour.`,
+    a: `Care runs ${siteInfo.hoursLabel}. Holiday closures and classroom schedule notes are confirmed before enrollment.`,
   },
   {
     q: 'What ages do you serve?',
-    a: `Families can ask about openings for ${siteInfo.ageGroups.join(', ').toLowerCase()} and school-age care.`,
+    a: `Care is available for ${siteInfo.ageGroups.join(', ').toLowerCase()} and school-age children, depending on classroom space.`,
   },
   {
     q: 'Do you offer before and after school care?',
     a: `Yes. School-age pickup may be available from ${siteInfo.pickupSchools.join(', ')}.`,
   },
   {
-    q: 'Where is the center located?',
-    a: `The center is at ${siteInfo.addressLine1}, ${siteInfo.cityStateZip}.`,
+    q: 'Where is care located?',
+    a: `The address is ${siteInfo.addressLine1}, ${siteInfo.cityStateZip}.`,
   },
 ];
 ---
 
 <BaseLayout
   title="Marietta Child Care and Day Care | Marietta Childcare"
-  description="Marietta child care and day care for infants, toddlers, preschoolers, pre-K children, and school-age families. Schedule a tour or call today."
+  description="Marietta child care and day care for infants, toddlers, preschoolers, pre-K children, and school-age children. Schedule a tour or call today."
   canonical="/"
 >
   <section class="py-12 lg:py-20">
@@ -41,7 +41,7 @@ const homeFaqs = [
           Child care in Marietta that fits your workday and your child.
         </h1>
         <p class="mt-6 max-w-2xl text-base leading-relaxed text-[#111815]/75 sm:text-lg">
-          Tour a Marietta early learning center for infants, toddlers, twos, threes, fours, and school-age children. Ask about openings, tuition, daily routines, and before or after school pickup.
+          Visit a Marietta early learning location for infants, toddlers, twos, threes, fours, and school-age children. Bring your child's age, start date, and weekly schedule so the conversation starts in the right place.
         </p>
         <div class="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
           <a href="/contact" class="inline-flex w-full items-center justify-center rounded-full bg-primary px-7 py-4 font-bold text-white shadow-lg shadow-primary/20 transition hover:bg-primary/90 sm:w-auto">
@@ -78,7 +78,7 @@ const homeFaqs = [
     <div class="rounded-lg bg-white p-5 shadow-sm">
       <Icon name="lock" class="mb-3 size-6 text-primary" />
       <h2 class="font-black">Parent updates</h2>
-      <p class="mt-1 text-sm text-[#111815]/70">Ask about the parent communication app and daily notes.</p>
+      <p class="mt-1 text-sm text-[#111815]/70">Parent app access and daily notes help you follow the day.</p>
     </div>
   </section>
 
@@ -87,7 +87,7 @@ const homeFaqs = [
       <p class="text-sm font-black uppercase tracking-widest text-primary">Programs</p>
       <h2 class="mt-2 text-4xl font-black">Care for each stage of early childhood.</h2>
       <p class="mt-4 text-lg text-[#111815]/70">
-        The right classroom changes as children grow. Start with your child's age, schedule, and start date, then use a tour to compare fit.
+        The right classroom changes as children grow. Start with your child's age, schedule, and start date, then see how the day would actually work.
       </p>
     </div>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -111,7 +111,7 @@ const homeFaqs = [
       <img src={images.dropoff} alt="Parent hugging child at drop-off" class="h-full min-h-[340px] rounded-xl object-cover shadow-lg" loading="lazy" />
       <div>
         <p class="text-sm font-black uppercase tracking-widest text-primary">Working family logistics</p>
-        <h2 class="mt-2 text-4xl font-black">Ask the practical questions first.</h2>
+        <h2 class="mt-2 text-4xl font-black">Start with the practical parts.</h2>
         <p class="mt-4 text-lg leading-relaxed text-[#111815]/75">
           Child care has to work in real life: drop-off, pickup, meals, rest, communication, school pickup, tuition, and what happens when your child has a hard day.
         </p>
@@ -131,7 +131,7 @@ const homeFaqs = [
     <div class="mb-10 text-center">
       <h2 class="text-4xl font-black">Parent resources</h2>
       <p class="mx-auto mt-4 max-w-2xl text-[#111815]/70">
-        Use these guides to ask better questions before you choose a center.
+        Use these guides to walk into a tour with the right details in mind.
       </p>
     </div>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">

@@ -1,22 +1,22 @@
 # Marietta Childcare Site Cleanup - Master To-Do Ledger
 
 ## Project Status Summary
-Full-site visual and copy cleanup implemented and QA-passed. Local preview is running.
+Full-site visual cleanup and parent-first copy rewrite are live on Netlify production.
 
 ## Current Phase
-Preview / handoff
+Production deploy complete
 
 ## Current Active Work
-Local preview running at `http://127.0.0.1:4321/`.
+Ready for production review.
 
 ## Queue of Upcoming Tasks
-- User review of the local preview.
+- Review production and decide whether any follow-up refinements are needed.
 
 ## In-Progress Work
-- Preview server is active for review.
+- None.
 
 ## QA / Review Queue
-- User preview review.
+- Optional stakeholder copy review before production deploy.
 
 ## Completed Work
 - Project management files initialized on 2026-06-08 11:39:15.
@@ -28,15 +28,23 @@ Local preview running at `http://127.0.0.1:4321/`.
 - Final `npm run build` passed with 58 static pages.
 - Required forbidden-string scans passed across source and generated HTML.
 - Browser QA completed for home, contact, about, programs, FAQ, one solution page, one resource page, and one service-area page at desktop and mobile widths.
+- Rewrote shared page data and standalone page copy in a parent-first voice using Claude Writing Style gates.
+- Removed repeated cautious copy tics from source: `ask about`, `families can`, `use a tour`, `current availability`, `clear answers`, `the center`.
+- Rebuilt successfully with 58 static pages after the rewrite.
+- Verified built `dist` has zero missing image references and zero `href="#"` links.
+- Fixed mobile `PageHero` text clipping by constraining hero copy width on small screens.
+- Static browser QA completed on representative desktop/mobile pages from `http://127.0.0.1:8088/`.
+- Deployed parent-first rewrite and mobile hero fix to Netlify production deploy `6a27463277fdc71d2e1fdf52`.
+- Verified production home, contact, downtown Marietta service-area page, unique deploy URL, and contact hero image return `200`.
 
 ## Blockers / Decisions Needed
 - None active.
 
 ## Last Significant Progress
-Started local preview server on port 4321 for user review.
+Completed production deploy of the parent-first rewrite and verified live routes/assets.
 
 ## Immediate Next Actions
-- Review `http://127.0.0.1:4321/` locally.
+- Review `https://mariettachildcare.netlify.app/`.
 
 ## Resume Instructions
 Read `context/CURRENT_STATE.md`, then this file, then the active task files.

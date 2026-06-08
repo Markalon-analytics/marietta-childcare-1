@@ -9,14 +9,14 @@ interface Props {
 const { title, description, image, eyebrow = 'Marietta, Georgia' } = Astro.props;
 ---
 
-<section class="relative w-screen -ml-[calc((100vw-100%)/2)] overflow-hidden bg-[#10221b]">
+<section class="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[#10221b]">
   <div class="absolute inset-0">
     <img src={image} alt="" class="h-full w-full object-cover" loading="eager" />
     <div class="absolute inset-0 bg-[#10221b]/70"></div>
   </div>
   <div class="relative mx-auto max-w-[1280px] px-6 py-20 lg:px-20 lg:py-24">
     <p class="mb-4 text-sm font-bold uppercase tracking-widest text-secondary">{eyebrow}</p>
-    <h1 class="max-w-3xl text-4xl font-black leading-tight text-white lg:text-6xl">{title}</h1>
-    <p class="mt-6 max-w-2xl text-lg leading-relaxed text-white/90">{description}</p>
+    <h1 class="w-full max-w-[342px] text-4xl font-black leading-tight text-white sm:max-w-3xl lg:text-6xl">{title}</h1>
+    <p class="mt-6 w-full max-w-[342px] break-words text-lg leading-relaxed text-white/90 sm:max-w-2xl">{description}</p>
   </div>
 </section>

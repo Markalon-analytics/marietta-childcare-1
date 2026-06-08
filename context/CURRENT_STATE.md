@@ -4,16 +4,16 @@
 Marietta Childcare Site Cleanup: full 56-page Astro static site cleanup for visual polish, local lead generation, light BBMA Marietta factual alignment, and strict no-BBMA public branding.
 
 ## Current Phase and Status
-Preview / handoff - Implementation and QA are complete. Local preview is running at `http://127.0.0.1:4321/`.
+Parent-first rewrite deployed to Netlify production.
 
 ## Last Completed Action
-Fixed the missing default social image reference, rebuilt, restarted preview, and verified all referenced image URLs return `200`.
+Deployed the latest parent-first copy rewrite and mobile hero fix to Netlify production. Production URL, unique deploy URL, contact page, downtown Marietta service-area page, and contact hero image all returned `200`.
 
 ## Active Blockers
 None active.
 
 ## Immediate Next Action
-User review of the local preview at `http://127.0.0.1:4321/`.
+Review production at `https://mariettachildcare.netlify.app/` or prepare any follow-up refinements.
 
 ## Required Read Order
 1. `context/CURRENT_STATE.md`
@@ -22,4 +22,4 @@ User review of the local preview at `http://127.0.0.1:4321/`.
 4. Active task or batch files
 
 ## Last Updated
-2026-06-08 12:56:19
+2026-06-08 18:47:00
