@@ -1,21 +1,27 @@
 ---
 import Nav from './Nav.astro';
 import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+import { siteInfo } from '../data/site';
 ---
 
 <header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-solid border-[#f0f4f3] dark:border-[#1a2e26] px-6 lg:px-20 py-4">
   <div class="max-w-[1280px] mx-auto flex items-center justify-between">
-    <div class="flex items-center gap-3">
+    <a class="flex items-center gap-3" href="/" aria-label="Marietta Childcare home">
       <div class="size-10 bg-primary rounded-full flex items-center justify-center text-white">
         <Logo size="md" />
       </div>
-      <h2 class="text-[#111815] dark:text-white text-xl font-bold leading-tight tracking-tight">Marietta Childcare</h2>
-    </div>
+      <span class="text-[#111815] dark:text-white text-xl font-bold leading-tight">Marietta Childcare</span>
+    </a>
 
     <Nav />
 
-    <button class="flex min-w-[140px] cursor-pointer items-center justify-center rounded-full h-11 px-6 bg-gradient-to-r from-primary to-[#0da36a] text-white text-sm font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+    <a class="hidden sm:flex min-w-[140px] cursor-pointer items-center justify-center rounded-full h-11 px-6 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-colors" href={siteInfo.leadPath}>
       <span>Schedule a Tour</span>
-    </button>
+    </a>
+
+    <a class="flex sm:hidden size-11 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/20 hover:bg-primary/90 transition-colors" href={siteInfo.leadPath} aria-label="Schedule a tour">
+      <Icon name="calendar" class="size-5" />
+    </a>
   </div>
 </header>

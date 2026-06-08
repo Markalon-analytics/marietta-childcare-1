@@ -1,80 +1,80 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import LeadCTA from '../components/LeadCTA.astro';
+import PageHero from '../components/PageHero.astro';
+import { images, siteInfo } from '../data/site';
 ---
 
-<BaseLayout 
-  title="About Us - Marietta Childcare"
-  description="Learn about Marietta Childcare's mission, values, educators, and commitment to quality early childhood education.">
-  <section class="relative py-32 overflow-hidden w-screen -ml-[calc((100vw-100%)/2)]">
-    <div class="absolute inset-0 z-0">
-      <img 
-        src="/images/Background_Images/educator_helping_toddler_jacket_background.jpg" 
-        alt="Educator with child" 
-        class="w-full h-full object-cover"
-      />
-      <div class="absolute inset-0 bg-black/40"></div>
-    </div>
-    <div class="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-20">
-      <h1 class="text-4xl lg:text-6xl font-black mb-6 text-white drop-shadow-lg">About Marietta Childcare</h1>
-      <p class="text-lg mb-12 max-w-2xl text-white drop-shadow-md">Learn about our mission, values, and commitment to quality early childhood education since 1995.</p>
-    </div>
-  </section>
+<BaseLayout
+  title="About Marietta Childcare | Marietta Childcare"
+  description="Learn what Marietta families can ask about programs, hours, safety, communication, and enrollment before scheduling a child care tour."
+>
+  <PageHero
+    title="About Marietta Childcare"
+    description="We help Marietta families compare child care by the details that shape daily life: age group, hours, classroom routines, safety, communication, and fit."
+    image={images.garden}
+    eyebrow="About the center"
+  />
 
-  <section class="py-20 px-6 lg:px-20">
-    <div class="max-w-[1280px] mx-auto">
-      <div class="prose prose-lg max-w-3xl mb-12">
-        <p>
-          Marietta Childcare has been nurturing the next generation with love, safety, and a passion for early education since 1995. Marietta Childcare serves over 500 families across the Marietta, Georgia community, providing comprehensive childcare and educational programs for infants through school-age children.
-        </p>
-
-        <h2>Our Mission</h2>
-        <p>
-          Marietta Childcare's mission is to create a safe, nurturing environment where every child learns, grows, and thrives. Marietta Childcare believes that quality early childhood education forms the foundation for lifelong success and development.
-        </p>
-
-        <h2>Our Values</h2>
-        <p>
-          Marietta Childcare is committed to five core values: safety, learning, growth, community, and compassion. These values guide every decision Marietta Childcare makes regarding curriculum development, educator training, and family support.
-        </p>
-
-        <h2>Educator Credentials & Training</h2>
-        <p>
-          Marietta Childcare employs highly qualified educators who hold certifications in early childhood education, child development, and CPR/First Aid. All educators at Marietta Childcare undergo comprehensive background checks and participate in ongoing professional development training.
-        </p>
-
-        <h2>Facility Overview</h2>
-        <p>
-          Marietta Childcare operates a state-of-the-art facility located at 123 Peach Street, Marietta, GA 30060. The facility features age-appropriate classrooms, outdoor learning spaces, a full kitchen for nutritious meal preparation, and secure entry systems for child safety.
-        </p>
-
-        <h2>Community Commitment</h2>
-        <p>
-          Marietta Childcare is deeply committed to the Marietta community. Marietta Childcare partners with local schools, participates in community events, and supports families through educational resources and parent engagement programs.
-        </p>
+  <section class="py-16">
+    <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+      <div>
+        <p class="text-sm font-black uppercase tracking-widest text-primary">What to expect</p>
+        <h2 class="mt-2 text-4xl font-black leading-tight">A tour should give you plain answers.</h2>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        <div class="bg-primary/5 p-6 rounded-lg">
-          <h3 class="font-bold text-lg mb-2">500+ Families Served</h3>
-          <p class="text-sm">Trusted by families across Marietta and surrounding communities</p>
-        </div>
-        <div class="bg-secondary/5 p-6 rounded-lg">
-          <h3 class="font-bold text-lg mb-2">30+ Years Experience</h3>
-          <p class="text-sm">Decades of expertise in early childhood education and care</p>
-        </div>
-        <div class="bg-primary/5 p-6 rounded-lg">
-          <h3 class="font-bold text-lg mb-2">Certified Educators</h3>
-          <p class="text-sm">All staff hold professional certifications and ongoing training</p>
-        </div>
-      </div>
-
-      <div class="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-lg text-center">
-        <h2 class="text-2xl font-bold mb-4">Ready to Learn More?</h2>
-        <p class="mb-6">Schedule a tour of Marietta Childcare and see our facility firsthand.</p>
-        <a href="/contact" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform">
-          Schedule a Tour
-        </a>
+      <div class="space-y-5 text-lg leading-relaxed text-[#111815]/75">
+        <p>
+          Choosing child care is not an abstract decision. You need to know who your child will spend the day with, how the room feels, how teachers communicate, and whether the schedule works for your family.
+        </p>
+        <p>
+          Use MariettaChildCare.com to schedule a local tour, ask about current openings, and compare care for infants, toddlers, twos, threes, fours, and school-age children.
+        </p>
       </div>
     </div>
   </section>
-</Layout>
+
+  <section class="grid gap-6 pb-16 md:grid-cols-2 lg:grid-cols-4">
+    <div class="rounded-lg bg-white p-6 shadow-sm">
+      <Icon name="clock" class="mb-4 size-7 text-primary" />
+      <h3 class="font-black">Hours</h3>
+      <p class="mt-2 text-sm text-[#111815]/70">{siteInfo.hoursLabel}</p>
+    </div>
+    <div class="rounded-lg bg-white p-6 shadow-sm">
+      <Icon name="map" class="mb-4 size-7 text-primary" />
+      <h3 class="font-black">Location</h3>
+      <p class="mt-2 text-sm text-[#111815]/70">{siteInfo.addressLine1}<br />{siteInfo.cityStateZip}</p>
+    </div>
+    <div class="rounded-lg bg-white p-6 shadow-sm">
+      <Icon name="users" class="mb-4 size-7 text-primary" />
+      <h3 class="font-black">Age Groups</h3>
+      <p class="mt-2 text-sm text-[#111815]/70">{siteInfo.ageGroups.join(', ')}, and school-age care.</p>
+    </div>
+    <div class="rounded-lg bg-white p-6 shadow-sm">
+      <Icon name="sparkles" class="mb-4 size-7 text-primary" />
+      <h3 class="font-black">Offerings</h3>
+      <p class="mt-2 text-sm text-[#111815]/70">{siteInfo.offerings.join(', ')}.</p>
+    </div>
+  </section>
+
+  <section class="pb-16">
+    <div class="rounded-lg border border-primary/15 bg-primary/5 p-8">
+      <h2 class="text-3xl font-black">Questions worth bringing on your tour</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-2">
+        {[
+          'What does a normal day look like for my child\'s age?',
+          'How are meals, rest, outdoor play, and parent updates handled?',
+          'What is available for my preferred start date?',
+          'How does before and after school pickup work?',
+        ].map((item) => (
+          <p class="flex gap-3 text-[#111815]/80">
+            <Icon name="check" class="mt-1 size-5 shrink-0 text-primary" />
+            <span>{item}</span>
+          </p>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <LeadCTA />
+</BaseLayout>

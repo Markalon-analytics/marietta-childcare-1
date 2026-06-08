@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import SimplePageContent from '../../components/SimplePageContent.astro';
+import { serviceAreaPages } from '../../data/site';
+
+export function getStaticPaths() {
+  return serviceAreaPages.map((page) => ({
+    params: { slug: page.slug },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+---
+
+<BaseLayout title={page.title} description={page.description} canonical={`/service-areas/${page.slug}/`}>
+  <PageHero title={page.heroTitle} description={page.heroText} image={page.heroImage} eyebrow="Service area" />
+  <SimplePageContent page={page} />
+</BaseLayout>

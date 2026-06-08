@@ -1,189 +1,72 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import LeadCTA from '../../components/LeadCTA.astro';
+import PageHero from '../../components/PageHero.astro';
+import { images, serviceAreaPages, siteInfo } from '../../data/site';
 
-const title = "Service Areas | Marietta Childcare";
-const description = "Marietta Childcare serves families across Marietta, Georgia and surrounding communities. Explore our service areas and local expertise.";
+const areaSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ChildCare',
+  name: 'Marietta Childcare',
+  telephone: siteInfo.phoneLabel,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: siteInfo.addressLine1,
+    addressLocality: 'Marietta',
+    addressRegion: 'GA',
+    postalCode: '30008',
+    addressCountry: 'US',
+  },
+  areaServed: ['Marietta', 'Kennesaw', 'Smyrna', 'Cobb County'],
+};
 ---
 
-<BaseLayout title={title} description={description}>
-  <section class="relative py-32 overflow-hidden w-screen -ml-[calc((100vw-100%)/2)]">
-    <div class="absolute inset-0 z-0">
-      <img 
-        src="/images/Background_Images/diverse_children_sharing_toy_background.jpg" 
-        alt="Children playing together" 
-        class="w-full h-full object-cover"
-      />
-      <div class="absolute inset-0 bg-black/40"></div>
-    </div>
-    <div class="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-20">
-      <h1 class="text-4xl lg:text-6xl font-black mb-6 text-white drop-shadow-lg">Marietta Childcare Throughout Georgia</h1>
-      <p class="text-lg mb-12 max-w-2xl text-white drop-shadow-md">
-          Marietta Childcare serves families across Marietta, Georgia and surrounding communities. Service Areas include downtown Marietta, north Marietta, south Marietta, east Marietta, west Marietta, and extended coverage in Marietta County, Kennesaw, Smyrna, and Cobb County. Our Service Areas reflect our commitment to providing accessible childcare to families throughout the region.
+<BaseLayout
+  title="Marietta Child Care Service Areas | Marietta Childcare"
+  description="Child care service-area information for Marietta, Cobb County, Kennesaw, Smyrna, and nearby families comparing a Marietta center."
+>
+  <PageHero
+    title="Child Care Near Marietta and Cobb County"
+    description="The center is located at 2040 MacLand Crossing Circle in Marietta. Use these area pages to compare commute, school pickup, and program fit."
+    image={images.play}
+    eyebrow="Service areas"
+  />
+
+  <section class="py-16">
+    <div class="mb-10 max-w-3xl">
+      <h2 class="text-4xl font-black">Start with the real address.</h2>
+      <p class="mt-4 text-lg leading-relaxed text-[#111815]/75">
+        A service-area page should not make the location vague. The practical question is whether the Marietta center works for your route, school pickup, child care hours, and start date.
       </p>
-      <a href="/contact" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform shadow-lg">Find Your Local Center</a>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {serviceAreaPages.map((page) => (
+        <a href={`/service-areas/${page.slug}`} class="rounded-lg border border-[#e4ece8] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+          <Icon name="map" class="mb-4 size-7 text-primary" />
+          <h2 class="text-xl font-black">{page.heroTitle}</h2>
+          <p class="mt-3 text-sm leading-relaxed text-[#111815]/70">{page.description}</p>
+          <span class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary">
+            View area <Icon name="arrow" class="size-4" />
+          </span>
+        </a>
+      ))}
     </div>
   </section>
 
-  <section class="py-20 px-6 lg:px-20">
-    <div class="max-w-[1280px] mx-auto">
-        
-      <div class="prose prose-lg max-w-3xl mb-12">
-        <h2>Marietta Childcare Service Area Overview</h2>
-        <p>
-            Service Area Coverage at Marietta Childcare extends throughout Marietta and surrounding communities. Service Area Coverage ensures that families throughout the region have access to quality childcare. Marietta Childcare's Service Area includes both urban and suburban neighborhoods, serving diverse families across multiple communities.
-        </p>
-        <p>
-            Local Expertise in each Service Area enables Marietta Childcare to understand neighborhood-specific needs and community resources. Local Expertise supports families by providing location-specific information, connecting families with community resources, and demonstrating deep knowledge of each neighborhood served.
-        </p>
+  <section class="pb-16">
+    <div class="rounded-lg bg-white p-8 shadow-sm">
+      <h2 class="text-3xl font-black">Local facts</h2>
+      <div class="mt-6 grid gap-5 md:grid-cols-3">
+        <p class="flex gap-3 text-[#111815]/75"><Icon name="map" class="mt-1 size-5 shrink-0 text-primary" /> {siteInfo.addressLine1}, {siteInfo.cityStateZip}</p>
+        <p class="flex gap-3 text-[#111815]/75"><Icon name="clock" class="mt-1 size-5 shrink-0 text-primary" /> {siteInfo.hoursLabel}</p>
+        <p class="flex gap-3 text-[#111815]/75"><Icon name="phone" class="mt-1 size-5 shrink-0 text-primary" /> <a href={siteInfo.phoneHref} class="font-bold text-primary">{siteInfo.phoneLabel}</a></p>
       </div>
+    </div>
+  </section>
 
-      <h2 class="text-3xl font-bold mb-8">Explore Our Service Areas</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-        <a href="/service-areas/downtown-marietta" class="bg-white border-2 border-primary/20 hover:border-primary p-6 rounded-lg transition-all hover:shadow-lg">
-          <h3 class="text-xl font-bold mb-2">Downtown Marietta Childcare</h3>
-          <p class="text-sm mb-4">
-                Downtown Marietta Childcare serves families in the heart of Marietta. Downtown Marietta location provides convenient access for downtown professionals and families. Downtown Marietta community includes historic neighborhoods and vibrant commercial districts.
-          </p>
-          <span class="text-primary font-bold">Learn More →</span>
-        </a>
+  <LeadCTA />
 
-        <a href="/service-areas/north-marietta" class="bg-white border-2 border-secondary/20 hover:border-secondary p-6 rounded-lg transition-all hover:shadow-lg">
-          <h3 class="text-xl font-bold mb-2">North Marietta Childcare</h3>
-          <p class="text-sm mb-4">
-                North Marietta Childcare serves families in northern neighborhoods. North Marietta area includes residential communities and family-oriented neighborhoods. North Marietta location provides convenient access to northern families.
-          </p>
-          <span class="text-secondary font-bold">Learn More →</span>
-        </a>
-
-        <a href="/service-areas/south-marietta" class="bg-white border-2 border-primary/20 hover:border-primary p-6 rounded-lg transition-all hover:shadow-lg">
-          <h3 class="text-xl font-bold mb-2">South Marietta Childcare</h3>
-          <p class="text-sm mb-4">
-                South Marietta Childcare serves families in southern neighborhoods. South Marietta area includes diverse residential communities. South Marietta location provides convenient access to southern families.
-          </p>
-          <span class="text-primary font-bold">Learn More →</span>
-        </a>
-
-        <a href="/service-areas/east-marietta" class="bg-white border-2 border-secondary/20 hover:border-secondary p-6 rounded-lg transition-all hover:shadow-lg">
-          <h3 class="text-xl font-bold mb-2">East Marietta Childcare</h3>
-              <p class="text-sm mb-4">
-                East Marietta Childcare serves families on the east side. East Marietta area includes established neighborhoods and growing communities. East Marietta location provides convenient access to eastern families.
-          </p>
-          <span class="text-secondary font-bold">Learn More →</span>
-        </a>
-
-        <a href="/service-areas/west-marietta" class="bg-white border-2 border-primary/20 hover:border-primary p-6 rounded-lg transition-all hover:shadow-lg">
-          <h3 class="text-xl font-bold mb-2">West Marietta Childcare</h3>
-          <p class="text-sm mb-4">
-                West Marietta Childcare serves families on the west side. West Marietta area includes residential neighborhoods. West Marietta location provides convenient access to western families.
-          </p>
-          <span class="text-primary font-bold">Learn More →</span>
-        </a>
-
-        <a href="/service-areas/marietta-county" class="bg-white border-2 border-secondary/20 hover:border-secondary p-6 rounded-lg transition-all hover:shadow-lg">
-          <h3 class="text-xl font-bold mb-2">Marietta County Childcare</h3>
-          <p class="text-sm mb-4">
-                Marietta County Childcare extends our service throughout the county. Marietta County coverage provides regional expertise and access. Marietta County families benefit from our county-wide commitment.
-          </p>
-          <span class="text-secondary font-bold">Learn More →</span>
-        </a>
-
-        <a href="/service-areas/kennesaw" class="bg-white border-2 border-primary/20 hover:border-primary p-6 rounded-lg transition-all hover:shadow-lg">
-          <h3 class="text-xl font-bold mb-2">Kennesaw Childcare</h3>
-          <p class="text-sm mb-4">
-                Kennesaw Childcare serves families in nearby Kennesaw. Kennesaw location provides access to families in this growing community. Kennesaw families benefit from Marietta Childcare's local expertise.
-          </p>
-          <span class="text-primary font-bold">Learn More →</span>
-        </a>
-
-        <a href="/service-areas/smyrna" class="bg-white border-2 border-secondary/20 hover:border-secondary p-6 rounded-lg transition-all hover:shadow-lg">
-          <h3 class="text-xl font-bold mb-2">Smyrna Childcare</h3>
-          <p class="text-sm mb-4">
-                Smyrna Childcare serves families in surrounding Smyrna. Smyrna location provides access to families in this community. Smyrna families benefit from our local expertise and community knowledge.
-          </p>
-          <span class="text-secondary font-bold">Learn More →</span>
-        </a>
-
-        <a href="/service-areas/cobb-county" class="bg-white border-2 border-primary/20 hover:border-primary p-6 rounded-lg transition-all hover:shadow-lg">
-          <h3 class="text-xl font-bold mb-2">Cobb County Childcare</h3>
-          <p class="text-sm mb-4">
-                Cobb County Childcare extends our service throughout the county. Cobb County coverage demonstrates our commitment to serving the broader region. Cobb County families benefit from Marietta Childcare's county-wide expertise.
-          </p>
-          <span class="text-primary font-bold">Learn More →</span>
-        </a>
-      </div>
-
-      <h2 class="text-3xl font-bold mb-8">Why Families Choose Marietta Childcare</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-primary/5 p-6 rounded-lg">
-          <h3 class="font-bold text-lg mb-4">Local Expertise</h3>
-          <p class="text-sm">
-                Local Expertise in each Service Area enables Marietta Childcare to understand neighborhood-specific needs and community resources. Local Expertise supports families through location-specific knowledge and community connections.
-          </p>
-        </div>
-        <div class="bg-secondary/5 p-6 rounded-lg">
-          <h3 class="font-bold text-lg mb-4">Convenient Access</h3>
-          <p class="text-sm">
-                Convenient Access throughout our Service Areas means families can find quality childcare near their home or workplace. Convenient Access reduces commute time and supports work-life balance for busy families.
-          </p>
-        </div>
-        <div class="bg-primary/5 p-6 rounded-lg">
-          <h3 class="font-bold text-lg mb-4">Community Connection</h3>
-          <p class="text-sm">
-                Community Connection at Marietta Childcare means we're invested in the neighborhoods we serve. Community Connection includes participation in local events and partnerships with community organizations.
-          </p>
-        </div>
-        <div class="bg-secondary/5 p-6 rounded-lg">
-          <h3 class="font-bold text-lg mb-4">Consistent Quality</h3>
-          <p class="text-sm">
-                Consistent Quality across all Service Areas ensures that families receive the same high-quality care regardless of location. Consistent Quality reflects our commitment to excellence throughout our service region.
-              </p>
-            </div>
-          </div>
-        </div>
-
-      <div class="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-lg text-center">
-        <h2 class="text-2xl font-bold mb-4">Find Quality Childcare in Your Neighborhood</h2>
-        <p class="mb-6">
-          Marietta Childcare serves families throughout Marietta and surrounding communities. Service Areas coverage ensures quality childcare is accessible to families throughout the region.
-        </p>
-        <a href="/contact" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform">
-          Contact Us
-        </a>
-      </div>
-
-      </div>
-    </section>
-
-    <!-- Schema Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Marietta Childcare",
-      "description": "Quality childcare services serving Marietta, Georgia and surrounding communities",
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "Marietta",
-          "addressCountry": "US"
-        },
-        {
-          "@type": "City",
-          "name": "Kennesaw",
-          "addressCountry": "US"
-        },
-        {
-          "@type": "City",
-          "name": "Smyrna",
-          "addressCountry": "US"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Cobb County",
-          "addressCountry": "US"
-        }
-      ]
-    }
-    </script>
-  </div>
+  <script type="application/ld+json" set:html={JSON.stringify(areaSchema)} />
 </BaseLayout>

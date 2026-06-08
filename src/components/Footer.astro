@@ -1,38 +1,27 @@
 ---
+import Icon from './Icon.astro';
+import { siteInfo } from '../data/site';
+
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-white dark:bg-background-dark border-t border-[#f0f4f3] dark:border-white/10 pt-20 pb-10 px-6 lg:px-20">
+<footer class="bg-white dark:bg-background-dark border-t border-[#f0f4f3] dark:border-white/10 pt-16 pb-10 px-6 lg:px-20">
   <div class="max-w-[1280px] mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-16">
+    <div class="grid grid-cols-1 gap-8 mb-12 md:grid-cols-2 lg:grid-cols-6">
       <div>
         <div class="flex items-center gap-3 mb-6">
           <div class="size-8 bg-primary rounded-full flex items-center justify-center text-white">
-            <svg class="w-5 h-5 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="20" cy="10" r="5" />
-              <rect x="16" y="16" width="8" height="8" rx="1" />
-              <rect x="10" y="17" width="5" height="3" rx="1.5" />
-              <rect x="25" y="17" width="5" height="3" rx="1.5" />
-              <rect x="14" y="25" width="3" height="8" rx="1.5" />
-              <rect x="23" y="25" width="3" height="8" rx="1.5" />
-            </svg>
+            <Icon name="home" class="size-5" />
           </div>
           <h2 class="text-xl font-bold">Marietta Childcare</h2>
         </div>
         <p class="text-[#111815]/60 dark:text-white/60 mb-6 leading-relaxed">
-          Nurturing the next generation with love, safety, and a passion for early education since 1995.
+          Child care and early learning in Marietta for infants, toddlers, twos, threes, fours, and school-age children.
         </p>
-        <div class="flex gap-3">
-          <a class="text-primary hover:text-primary/70 transition-colors" href="#" title="Website">
-            <span class="material-symbols-outlined">language</span>
-          </a>
-          <a class="text-primary hover:text-primary/70 transition-colors" href="#" title="Facebook">
-            <span class="material-symbols-outlined">groups</span>
-          </a>
-          <a class="text-primary hover:text-primary/70 transition-colors" href="#" title="Email">
-            <span class="material-symbols-outlined">mail</span>
-          </a>
-        </div>
+        <a class="inline-flex items-center gap-2 text-primary hover:text-primary/70 transition-colors" href={siteInfo.phoneHref}>
+          <Icon name="phone" class="size-4" />
+          {siteInfo.phoneLabel}
+        </a>
       </div>
 
       <div>
@@ -42,18 +31,18 @@ const currentYear = new Date().getFullYear();
           <li><a class="hover:text-primary transition-colors" href="/programs/toddler-program">Toddler Program</a></li>
           <li><a class="hover:text-primary transition-colors" href="/programs/preschool">Preschool</a></li>
           <li><a class="hover:text-primary transition-colors" href="/programs/pre-k">Pre-Kindergarten</a></li>
-          <li><a class="hover:text-primary transition-colors" href="/programs/after-school">After-School</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/programs/after-school">Before and After School</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="font-black text-lg mb-6">More Programs</h4>
+        <h4 class="font-black text-lg mb-6">More Care</h4>
         <ul class="space-y-2 text-sm text-[#111815]/70 dark:text-white/70">
-          <li><a class="hover:text-primary transition-colors" href="/programs/summer-camp">Summer Camp</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/programs/summer-camp">Summer Care</a></li>
           <li><a class="hover:text-primary transition-colors" href="/programs/school-break-care">School Break Care</a></li>
           <li><a class="hover:text-primary transition-colors" href="/programs/full-time-care">Full-Time Care</a></li>
-          <li><a class="hover:text-primary transition-colors" href="/programs/part-time-care">Part-Time Care</a></li>
-          <li><a class="hover:text-primary transition-colors" href="/programs/special-needs">Special Needs</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/programs/part-time-care">Part-Time Questions</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/programs/special-needs">Extra Support Questions</a></li>
         </ul>
       </div>
 
@@ -73,7 +62,7 @@ const currentYear = new Date().getFullYear();
         <ul class="space-y-2 text-sm text-[#111815]/70 dark:text-white/70">
           <li><a class="hover:text-primary transition-colors" href="/resources/child-development">Child Development</a></li>
           <li><a class="hover:text-primary transition-colors" href="/resources/parenting-tips">Parenting Tips</a></li>
-          <li><a class="hover:text-primary transition-colors" href="/resources/nutrition-guide">Nutrition Guide</a></li>
+          <li><a class="hover:text-primary transition-colors" href="/resources/nutrition-guide">Meals and Snacks</a></li>
           <li><a class="hover:text-primary transition-colors" href="/resources/school-readiness">School Readiness</a></li>
           <li><a class="hover:text-primary transition-colors" href="/blog">Parent Resources</a></li>
         </ul>
@@ -82,19 +71,19 @@ const currentYear = new Date().getFullYear();
       <div>
         <h4 class="font-black text-lg mb-6">Contact Us</h4>
         <ul class="space-y-3 text-sm text-[#111815]/70 dark:text-white/70">
-          <li>123 Peach Street<br/>Marietta, GA 30060</li>
-          <li><a href="tel:(770) 555-0123" class="hover:text-primary transition-colors">(770) 555-0123</a></li>
-          <li><a href="mailto:hello@mariettachildcare.com" class="hover:text-primary transition-colors">hello@mariettachildcare.com</a></li>
+          <li>{siteInfo.addressLine1}<br />{siteInfo.cityStateZip}</li>
+          <li><a href={siteInfo.phoneHref} class="hover:text-primary transition-colors">{siteInfo.phoneLabel}</a></li>
+          <li>{siteInfo.hoursLabel}</li>
           <li><a href="/contact" class="hover:text-primary transition-colors font-bold">Schedule a Tour</a></li>
         </ul>
       </div>
     </div>
 
     <div class="pt-8 border-t border-[#f0f4f3] dark:border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#111815]/50 dark:text-white/50">
-      <p>© {currentYear} Marietta Childcare. All rights reserved.</p>
+      <p>&copy; {currentYear} Marietta Childcare. All rights reserved.</p>
       <div class="flex gap-6">
-        <a class="hover:underline" href="#">Privacy Policy</a>
-        <a class="hover:underline" href="#">Terms of Service</a>
+        <a class="hover:underline" href="/privacy-policy">Privacy Policy</a>
+        <a class="hover:underline" href="/terms">Terms</a>
       </div>
     </div>
   </div>

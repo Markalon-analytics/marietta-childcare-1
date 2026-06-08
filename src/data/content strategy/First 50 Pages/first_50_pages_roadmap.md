@@ -17,7 +17,7 @@
 
 | # | URL | Page Title | Content Description |
 |---|-----|-----------|----------------------|
-| 1 | / | Home | Hero section with "Where Children Learn, Grow, and Thrive" headline, 500+ families served, primary CTA for scheduling tours |
+| 1 | / | Home | Local Marietta child care lead-gen page with current hours, program links, and primary CTA for scheduling tours |
 | 2 | /about | About Us | Company story, mission statement, educator credentials, facility overview, community commitment |
 | 3 | /programs | Programs Overview | Overview of all childcare programs with links to detailed pages |
 | 4 | /contact | Schedule a Tour | Contact form, phone number, location map, tour booking system |
@@ -98,7 +98,7 @@
 ## Strategic Notes
 
 - **Primary conversion goal:** Tour scheduling and enrollment inquiries
-- **Key differentiator:** 500+ families served, experienced educators, play-based learning, safe nurturing environment
+- **Key differentiator:** verified local facts, clear program routing, parent communication, weekday hours, and school-age pickup details
 - **Local SEO focus:** Service area pages target Marietta neighborhoods and surrounding communities
 - **Content depth:** Pillar pages establish expertise in child development and parenting support
 - **User journey:** Home → Programs → Specific Program → FAQ → Schedule Tour

@@ -1,0 +1,51 @@
+---
+import Icon from './Icon.astro';
+import LeadCTA from './LeadCTA.astro';
+import type { SimplePage } from '../data/site';
+
+interface Props {
+  page: SimplePage;
+}
+
+const { page } = Astro.props;
+---
+
+<section class="py-16">
+  <div class="grid gap-6 lg:grid-cols-3">
+    {page.sections.map((section) => (
+      <article class="rounded-lg border border-[#e4ece8] bg-white p-6 shadow-sm">
+        <div class="mb-4 flex size-11 items-center justify-center rounded-full bg-primary/10 text-primary">
+          <Icon name="check" class="size-5" />
+        </div>
+        <h2 class="mb-3 text-2xl font-black leading-tight text-[#111815]">{section.title}</h2>
+        <p class="leading-relaxed text-[#111815]/75">{section.body}</p>
+        {section.bullets && (
+          <ul class="mt-5 space-y-3">
+            {section.bullets.map((item) => (
+              <li class="flex gap-3 text-sm font-semibold text-[#111815]/80">
+                <Icon name="check" class="mt-0.5 size-4 shrink-0 text-primary" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </article>
+    ))}
+  </div>
+
+  {page.related && (
+    <div class="mt-10 rounded-lg border border-primary/15 bg-primary/5 p-6">
+      <h2 class="mb-4 text-xl font-black">Helpful next steps</h2>
+      <div class="flex flex-wrap gap-3">
+        {page.related.map((item) => (
+          <a class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-bold text-primary shadow-sm transition hover:bg-primary hover:text-white" href={item.href}>
+            {item.label}
+            <Icon name="arrow" class="size-4" />
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
+</section>
+
+<LeadCTA title={page.ctaTitle} text={page.ctaText} />

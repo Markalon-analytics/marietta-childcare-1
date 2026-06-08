@@ -1,125 +1,97 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import PageHero from '../components/PageHero.astro';
+import { images, siteInfo } from '../data/site';
 ---
 
-<BaseLayout 
-  title="Schedule a Tour - Marietta Childcare"
-  description="Schedule a tour at Marietta Childcare and learn about our programs, facilities, and approach to early childhood education.">
-  <section class="relative py-32 overflow-hidden w-screen -ml-[calc((100vw-100%)/2)]">
-    <div class="absolute inset-0 z-0">
-      <img 
-        src="/images/Background_Images/diverse_children_sharing_toy_background.jpg" 
-        alt="Schedule a tour" 
-        class="w-full h-full object-cover"
-      />
-      <div class="absolute inset-0 bg-black/40"></div>
-    </div>
-    <div class="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-20">
-      <h1 class="text-4xl lg:text-6xl font-black mb-6 text-white drop-shadow-lg">Schedule a Tour</h1>
-      <p class="text-lg mb-12 max-w-2xl text-white drop-shadow-md">Visit Marietta Childcare and experience our programs, facilities, and approach to early childhood education.</p>
+<BaseLayout
+  title="Schedule a Tour | Marietta Childcare"
+  description="Schedule a Marietta child care tour, call the center, or ask about current openings for infants, toddlers, preschool, pre-K, and school-age care."
+>
+  <PageHero
+    title="Schedule a Tour"
+    description="Tell us your child's age, your preferred start date, and what your family needs from child care. We will help you ask the right questions before you choose."
+    image={images.dropoff}
+    eyebrow="Contact"
+  />
+
+  <section class="py-16">
+    <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+      <aside class="space-y-6">
+        <div class="rounded-lg bg-white p-6 shadow-sm">
+          <Icon name="map" class="mb-3 size-6 text-primary" />
+          <h2 class="font-black">Location</h2>
+          <p class="mt-2 text-[#111815]/70">{siteInfo.addressLine1}<br />{siteInfo.cityStateZip}</p>
+        </div>
+        <div class="rounded-lg bg-white p-6 shadow-sm">
+          <Icon name="phone" class="mb-3 size-6 text-primary" />
+          <h2 class="font-black">Phone</h2>
+          <a class="mt-2 inline-block text-primary font-bold" href={siteInfo.phoneHref}>{siteInfo.phoneLabel}</a>
+        </div>
+        <div class="rounded-lg bg-white p-6 shadow-sm">
+          <Icon name="clock" class="mb-3 size-6 text-primary" />
+          <h2 class="font-black">Hours</h2>
+          <p class="mt-2 text-[#111815]/70">{siteInfo.hoursLabel}</p>
+        </div>
+      </aside>
+
+      <form name="tour-request" method="post" data-netlify="true" class="rounded-lg border border-primary/15 bg-white p-6 shadow-lg md:p-8">
+        <input type="hidden" name="form-name" value="tour-request" />
+        <h2 class="text-3xl font-black">Tour request</h2>
+        <p class="mt-3 text-[#111815]/70">
+          Share the basics and the questions you want answered. You can also call {siteInfo.phoneLabel}.
+        </p>
+
+        <div class="mt-8 grid gap-5 md:grid-cols-2">
+          <label class="block font-bold">
+            Parent name
+            <input name="parent_name" type="text" autocomplete="name" class="mt-2 w-full rounded border border-gray-300 px-4 py-3 font-normal" required />
+          </label>
+          <label class="block font-bold">
+            Phone
+            <input name="phone" type="tel" autocomplete="tel" class="mt-2 w-full rounded border border-gray-300 px-4 py-3 font-normal" required />
+          </label>
+          <label class="block font-bold">
+            Email
+            <input name="email" type="email" autocomplete="email" class="mt-2 w-full rounded border border-gray-300 px-4 py-3 font-normal" required />
+          </label>
+          <label class="block font-bold">
+            Child's age
+            <select name="child_age" class="mt-2 w-full rounded border border-gray-300 px-4 py-3 font-normal" required>
+              <option value="">Select age range</option>
+              <option>Infant</option>
+              <option>Toddler</option>
+              <option>Two years old</option>
+              <option>Three years old</option>
+              <option>Four years old</option>
+              <option>School-age</option>
+            </select>
+          </label>
+          <label class="block font-bold md:col-span-2">
+            Preferred start date or timing
+            <input name="start_timing" type="text" placeholder="Example: August, next month, or as soon as possible" class="mt-2 w-full rounded border border-gray-300 px-4 py-3 font-normal" />
+          </label>
+          <label class="block font-bold md:col-span-2">
+            What would you like to ask?
+            <textarea name="message" class="mt-2 h-32 w-full rounded border border-gray-300 px-4 py-3 font-normal" placeholder="Tell us about schedule, tuition, allergies, school pickup, or anything else you want covered on the tour."></textarea>
+          </label>
+        </div>
+
+        <button type="submit" class="mt-7 w-full rounded-full bg-primary px-8 py-4 font-black text-white transition hover:bg-primary/90">
+          Send Tour Request
+        </button>
+      </form>
     </div>
   </section>
 
-  <section class="py-20 px-6 lg:px-20">
-    <div class="max-w-[1280px] mx-auto">
-      
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
-        <div>
-          <h2 class="text-2xl font-bold mb-6">Contact Marietta Childcare</h2>
-          
-          <div class="space-y-6 mb-8">
-            <div>
-              <h3 class="font-bold mb-1 text-gray-900">Location</h3>
-              <p class="text-gray-600">123 Peach Street<br/>Marietta, GA 30060</p>
-            </div>
-
-            <div>
-              <h3 class="font-bold mb-1 text-gray-900">Phone</h3>
-              <p class="text-gray-600">(770) 555-0123</p>
-            </div>
-
-            <div>
-              <h3 class="font-bold mb-1 text-gray-900">Email</h3>
-              <p class="text-gray-600">hello@mariettachildcare.com</p>
-            </div>
-
-            <div>
-              <h3 class="font-bold mb-1 text-gray-900">Hours</h3>
-              <p class="text-gray-600">Monday - Friday: 6:30 AM - 6:30 PM<br/>Closed on weekends and holidays</p>
-            </div>
-          </div>
-
-          <div class="bg-primary/5 p-6 rounded-lg">
-            <h3 class="font-bold mb-2 text-gray-900">Tour Booking</h3>
-            <p class="text-sm mb-4 text-gray-600">Schedule a tour of Marietta Childcare to see our facility, meet our educators, and learn about our programs. Tours typically last 45 minutes to 1 hour.</p>
-          </div>
-        </div>
-
-        <div>
-          <form class="bg-white border-2 border-primary/20 p-8 rounded-lg">
-            <h2 class="text-2xl font-bold mb-6">Schedule Your Tour</h2>
-            
-            <div class="space-y-4">
-              <div>
-                <label class="block font-bold mb-2">Full Name</label>
-                <input type="text" placeholder="Your name" class="w-full border border-gray-300 rounded px-4 py-2" required />
-              </div>
-
-              <div>
-                <label class="block font-bold mb-2">Email Address</label>
-                <input type="email" placeholder="your@email.com" class="w-full border border-gray-300 rounded px-4 py-2" required />
-              </div>
-
-              <div>
-                <label class="block font-bold mb-2">Phone Number</label>
-                <input type="tel" placeholder="(770) 555-0000" class="w-full border border-gray-300 rounded px-4 py-2" required />
-              </div>
-
-              <div>
-                <label class="block font-bold mb-2">Child's Age</label>
-                <select class="w-full border border-gray-300 rounded px-4 py-2" required>
-                  <option>Select age range</option>
-                  <option>Infant (0-12 months)</option>
-                  <option>Toddler (12-36 months)</option>
-                  <option>Preschool (3-5 years)</option>
-                  <option>School-Age (5+ years)</option>
-                </select>
-              </div>
-
-              <div>
-                <label class="block font-bold mb-2">Preferred Tour Date</label>
-                <input type="date" class="w-full border border-gray-300 rounded px-4 py-2" required />
-              </div>
-
-              <div>
-                <label class="block font-bold mb-2">Message</label>
-                <textarea placeholder="Tell us about your childcare needs..." class="w-full border border-gray-300 rounded px-4 py-2 h-24" required></textarea>
-              </div>
-
-              <button type="submit" class="w-full bg-primary text-white font-bold py-3 rounded-full hover:scale-105 transition-transform">
-                Schedule Tour
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-
-      <div class="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-lg">
-        <h2 class="text-2xl font-bold mb-4">What to Expect on Your Tour</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div>
-            <h3 class="font-bold mb-2">Facility Overview</h3>
-            <p class="text-sm">See our classrooms, outdoor learning spaces, and safety features during your tour of Marietta Childcare.</p>
-          </div>
-          <div>
-            <h3 class="font-bold mb-2">Meet Our Team</h3>
-            <p class="text-sm">Meet our educators and learn about their qualifications and experience at Marietta Childcare.</p>
-          </div>
-          <div>
-            <h3 class="font-bold mb-2">Program Details</h3>
-            <p class="text-sm">Discuss your child's specific needs and learn how Marietta Childcare can support their development.</p>
-          </div>
-        </div>
+  <section class="pb-16">
+    <div class="rounded-lg bg-[#10221b] p-8 text-white">
+      <h2 class="text-3xl font-black">What to ask during the tour</h2>
+      <div class="mt-6 grid gap-5 md:grid-cols-3">
+        <p class="text-white/80">Ask how the daily schedule changes for infants, toddlers, preschoolers, and school-age children.</p>
+        <p class="text-white/80">Ask how parent updates, pickup authorization, meals, rest, and sick-child rules work.</p>
+        <p class="text-white/80">Ask what openings are available for your child's age and start date.</p>
       </div>
     </div>
   </section>

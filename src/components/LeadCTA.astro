@@ -1,0 +1,32 @@
+---
+import { siteInfo } from '../data/site';
+
+interface Props {
+  title?: string;
+  text?: string;
+}
+
+const {
+  title = 'Ready to see if this center fits your family?',
+  text = 'Schedule a tour, ask about current openings, and bring the questions that matter for your child.',
+} = Astro.props;
+---
+
+<section class="py-16">
+  <div class="rounded-lg bg-[#10221b] p-8 text-white shadow-xl md:p-10">
+    <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl font-black leading-tight">{title}</h2>
+        <p class="mt-3 text-white/80">{text}</p>
+      </div>
+      <div class="flex flex-col gap-3 sm:flex-row">
+        <a class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 font-bold text-white transition hover:bg-primary/90" href={siteInfo.leadPath}>
+          Schedule a Tour
+        </a>
+        <a class="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 font-bold text-white transition hover:bg-white/10" href={siteInfo.phoneHref}>
+          {siteInfo.phoneLabel}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import SimplePageContent from '../../components/SimplePageContent.astro';
+import { faqPages } from '../../data/site';
+
+export function getStaticPaths() {
+  return faqPages.map((page) => ({
+    params: { slug: page.slug },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+---
+
+<BaseLayout title={page.title} description={page.description} canonical={`/faq/${page.slug}/`}>
+  <PageHero title={page.heroTitle} description={page.heroText} image={page.heroImage} eyebrow="Parent questions" />
+  <SimplePageContent page={page} />
+</BaseLayout>

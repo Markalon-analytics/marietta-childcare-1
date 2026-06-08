@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import { images, siteInfo } from '../data/site';
+---
+
+<BaseLayout
+  title="Privacy Policy | Marietta Childcare"
+  description="Privacy policy for MariettaChildCare.com tour requests and parent inquiries."
+>
+  <PageHero
+    title="Privacy Policy"
+    description="We collect only the information families choose to share when they call, submit a form, or ask about child care."
+    image={images.books}
+    eyebrow="Site policy"
+  />
+
+  <section class="prose prose-lg max-w-3xl py-16">
+    <h2>Information families share</h2>
+    <p>When you submit a tour request, we may receive your name, phone number, email address, your child's age range, desired timing, and the message you include.</p>
+    <h2>How the information is used</h2>
+    <p>We use that information to respond to your inquiry, answer questions about care, and help schedule a tour. We do not sell parent inquiry information.</p>
+    <h2>Contact</h2>
+    <p>Call <a href={siteInfo.phoneHref}>{siteInfo.phoneLabel}</a> if you have a question about a tour request or information you submitted.</p>
+  </section>
+</BaseLayout>

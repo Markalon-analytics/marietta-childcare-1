@@ -1,86 +1,44 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import LeadCTA from '../components/LeadCTA.astro';
+import PageHero from '../components/PageHero.astro';
+import { images, resourcePages } from '../data/site';
 ---
 
-<BaseLayout 
-  title="Parent Resources - Marietta Childcare"
-  description="Explore Marietta Childcare's parent resources including child development guides, parenting tips, nutrition information, and school readiness resources.">
-  <section class="relative py-32 overflow-hidden w-screen -ml-[calc((100vw-100%)/2)]">
-    <div class="absolute inset-0 z-0">
-      <img 
-        src="/images/Background_Images/parent_dropoff_hug_doorway_background.jpg" 
-        alt="Parent resources" 
-        class="w-full h-full object-cover"
-      />
-      <div class="absolute inset-0 bg-black/40"></div>
-    </div>
-    <div class="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-20">
-      <h1 class="text-4xl lg:text-6xl font-black mb-6 text-white drop-shadow-lg">Parent Resources</h1>
-      <p class="text-lg mb-12 max-w-2xl text-white drop-shadow-md">Child development guides, parenting tips, nutrition information, and school readiness resources for families.</p>
-    </div>
-  </section>
+<BaseLayout
+  title="Parent Resources | Marietta Childcare"
+  description="Parent resources for choosing child care, child development, meals and snacks, school readiness, and easier classroom transitions."
+>
+  <PageHero
+    title="Parent Resources"
+    description="Use these practical guides to compare child care, prepare for a new classroom, and ask sharper questions on your tour."
+    image={images.dropoff}
+    eyebrow="Resources"
+  />
 
-  <section class="py-20 px-6 lg:px-20">
-    <div class="max-w-[1280px] mx-auto">
-      
-      <p class="text-lg mb-12 max-w-2xl">
-        Marietta Childcare provides comprehensive resources to support parents and families. Marietta Childcare's resource hub includes articles on child development, parenting tips, nutrition guidance, and activities to support learning at home.
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-        <a href="/resources/child-development" class="bg-white border-2 border-primary/20 hover:border-primary p-6 rounded-lg transition-all hover:shadow-lg">
-          <span class="material-symbols-outlined text-primary text-4xl mb-4">child_care</span>
-          <h3 class="text-xl font-bold mb-2">Child Development Guide</h3>
-          <p class="text-sm mb-4">Developmental milestones by age, learning stages, and growth tracking</p>
-          <span class="text-primary font-bold">Read More →</span>
+  <section class="py-16">
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {resourcePages.map((page) => (
+        <a href={`/resources/${page.slug}`} class="rounded-lg border border-[#e4ece8] bg-white p-6 shadow-sm transition hover:border-primary hover:shadow-lg">
+          <Icon name="book" class="mb-4 size-7 text-primary" />
+          <h2 class="text-xl font-black">{page.heroTitle}</h2>
+          <p class="mt-3 text-sm leading-relaxed text-[#111815]/70">{page.description}</p>
+          <span class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary">
+            Read guide <Icon name="arrow" class="size-4" />
+          </span>
         </a>
-
-        <a href="/resources/parenting-tips" class="bg-white border-2 border-secondary/20 hover:border-secondary p-6 rounded-lg transition-all hover:shadow-lg">
-          <span class="material-symbols-outlined text-secondary text-4xl mb-4">family_restroom</span>
-          <h3 class="text-xl font-bold mb-2">Parenting Tips & Advice</h3>
-          <p class="text-sm mb-4">Strategies for behavior management, family wellness, and positive parenting</p>
-          <span class="text-secondary font-bold">Read More →</span>
-        </a>
-
-        <a href="/resources/nutrition-guide" class="bg-white border-2 border-primary/20 hover:border-primary p-6 rounded-lg transition-all hover:shadow-lg">
-          <span class="material-symbols-outlined text-primary text-4xl mb-4">restaurant</span>
-          <h3 class="text-xl font-bold mb-2">Nutrition & Healthy Eating</h3>
-          <p class="text-sm mb-4">Meal planning, nutrition information, and allergy management</p>
-          <span class="text-primary font-bold">Read More →</span>
-        </a>
-
-        <a href="/resources/school-readiness" class="bg-white border-2 border-secondary/20 hover:border-secondary p-6 rounded-lg transition-all hover:shadow-lg">
-          <span class="material-symbols-outlined text-secondary text-4xl mb-4">school</span>
-          <h3 class="text-xl font-bold mb-2">School Readiness Checklist</h3>
-          <p class="text-sm mb-4">Kindergarten preparation, academic skills, and social-emotional readiness</p>
-          <span class="text-secondary font-bold">Read More →</span>
-        </a>
-
-        <a href="/resources/choosing-childcare" class="bg-white border-2 border-primary/20 hover:border-primary p-6 rounded-lg transition-all hover:shadow-lg">
-          <span class="material-symbols-outlined text-primary text-4xl mb-4">check_circle</span>
-          <h3 class="text-xl font-bold mb-2">Choosing Quality Childcare</h3>
-          <p class="text-sm mb-4">Guide to selecting childcare and questions to ask providers</p>
-          <span class="text-primary font-bold">Read More →</span>
-        </a>
-
-        <a href="/faq/enrollment-process" class="bg-white border-2 border-secondary/20 hover:border-secondary p-6 rounded-lg transition-all hover:shadow-lg">
-          <span class="material-symbols-outlined text-secondary text-4xl mb-4">assignment</span>
-          <h3 class="text-xl font-bold mb-2">Enrollment & Getting Started</h3>
-          <p class="text-sm mb-4">Steps to enroll at Marietta Childcare and what to expect</p>
-          <span class="text-secondary font-bold">Read More →</span>
-        </a>
-      </div>
-
-      <div class="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-lg">
-        <h2 class="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
-        <p class="mb-6">Find answers to common questions about Marietta Childcare's programs, policies, and services.</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <a href="/faq/how-much-childcare-cost" class="text-primary font-bold hover:underline">How Much Does Childcare Cost? →</a>
-          <a href="/faq/curriculum" class="text-primary font-bold hover:underline">What's Your Curriculum? →</a>
-          <a href="/faq/safety-security" class="text-primary font-bold hover:underline">How Safe Is Your Facility? →</a>
-          <a href="/faq/teacher-qualifications" class="text-primary font-bold hover:underline">What Are Your Teacher Qualifications? →</a>
-        </div>
-      </div>
+      ))}
+      <a href="/faq" class="rounded-lg border border-[#e4ece8] bg-white p-6 shadow-sm transition hover:border-primary hover:shadow-lg">
+        <Icon name="sparkles" class="mb-4 size-7 text-primary" />
+        <h2 class="text-xl font-black">Questions before you enroll</h2>
+        <p class="mt-3 text-sm leading-relaxed text-[#111815]/70">Hours, tuition, safety, meals, teachers, and parent communication all deserve clear answers.</p>
+        <span class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary">
+          See FAQ <Icon name="arrow" class="size-4" />
+        </span>
+      </a>
     </div>
   </section>
+
+  <LeadCTA />
 </BaseLayout>
