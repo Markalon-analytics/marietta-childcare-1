@@ -5,7 +5,7 @@ requirements:
   - REQ-CAN-01
   - REQ-REPORT-01
 outcome: Commit the audited URL/canonical fixes and publish the current site build.
-state: READY
+state: COMPLETE
 owns:
   - repository working tree
   - git commit

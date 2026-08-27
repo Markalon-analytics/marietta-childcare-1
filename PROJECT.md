@@ -43,7 +43,7 @@ In scope: Astro route generation, sitemap integration/configuration, canonical g
 
 ## Current status
 
-Audit, remediation, final build, and inventory complete. All acceptance gates are met; see `url-canonical-audit.md`.
+Audit, remediation, final build, commit, publish, and live inventory complete. All acceptance gates are met; see `url-canonical-audit.md` and `evidence/release-verification.md`.
 
 ## Resume order
 
