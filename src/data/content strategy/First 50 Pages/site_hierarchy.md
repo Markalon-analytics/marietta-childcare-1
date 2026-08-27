@@ -1,7 +1,7 @@
 # Marietta Childcare - Site Hierarchy & Visual Structure
 
 ```
-mariettachildcare.com/
+marietta-childcare.com/
 ├── / (Home)
 ├── /about (About Us)
 ├── /programs (Programs Overview)

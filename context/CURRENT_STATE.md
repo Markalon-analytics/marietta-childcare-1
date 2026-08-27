@@ -1,19 +1,19 @@
 # Current State
 
 ## Active Project Snapshot
-Marietta Childcare Site Cleanup: full 56-page Astro static site cleanup for visual polish, local lead generation, light BBMA Marietta factual alignment, and strict no-BBMA public branding.
+Marietta Childcare Site Cleanup: full 56-page Astro static site cleanup for visual polish, local lead generation, and a light BBMA location-finder layer for Marietta-area parents.
 
 ## Current Phase and Status
-Parent-first rewrite deployed to Netlify production.
+BBMA location-finder update complete and deployed.
 
 ## Last Completed Action
-Deployed the latest parent-first copy rewrite and mobile hero fix to Netlify production. Production URL, unique deploy URL, contact page, downtown Marietta service-area page, and contact hero image all returned `200`.
+Deployed production build `6a28c5d8433a4d59a6c5edfc` to Netlify. Verified live home returns `200`, `/contact` and `/contact/` return `302` to `https://bbmacademy.com/#awb-open-oc__2662`, and the homepage contains the BBMA location-finder copy and location data.
 
 ## Active Blockers
 None active.
 
 ## Immediate Next Action
-Review production at `https://mariettachildcare.netlify.app/` or prepare any follow-up refinements.
+None active.
 
 ## Required Read Order
 1. `context/CURRENT_STATE.md`
@@ -22,4 +22,4 @@ Review production at `https://mariettachildcare.netlify.app/` or prepare any fol
 4. Active task or batch files
 
 ## Last Updated
-2026-06-08 18:47:00
+2026-06-09 22:03:34 -04:00

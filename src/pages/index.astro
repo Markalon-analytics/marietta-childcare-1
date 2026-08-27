@@ -2,54 +2,55 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Icon from '../components/Icon.astro';
 import LeadCTA from '../components/LeadCTA.astro';
-import { faqPages, images, programPages, resourcePages, siteInfo } from '../data/site';
+import { bbmaLocations, faqPages, images, programPages, resourcePages, siteInfo } from '../data/site';
 
 const featuredPrograms = programPages.slice(0, 6);
 const featuredResources = resourcePages.slice(0, 4);
+const featuredLocations = bbmaLocations;
 const homeFaqs = [
   {
-    q: 'What are your hours?',
-    a: `Care runs ${siteInfo.hoursLabel}. Holiday closures and classroom schedule notes are confirmed before enrollment.`,
+    q: 'Which BBMA location is closest to Marietta?',
+    a: 'The BBMA search results for Marietta show Windy Hill and MacLand Crossing Circle first, followed by Woodstock, Powder Springs, Acworth, Dallas / Paulding, and Dunwoody.',
   },
   {
-    q: 'What ages do you serve?',
-    a: `Care is available for ${siteInfo.ageGroups.join(', ').toLowerCase()} and school-age children, depending on classroom space.`,
+    q: 'Which age group should I start with?',
+    a: `Start with ${siteInfo.ageGroups.join(', ').toLowerCase()} or school-age care, then choose the BBMA location that fits your commute and schedule.`,
   },
   {
     q: 'Do you offer before and after school care?',
-    a: `Yes. School-age pickup may be available from ${siteInfo.pickupSchools.join(', ')}.`,
+    a: `The Marietta location lists pickup from ${siteInfo.pickupSchools.join(', ')}. Confirm pickup details for the BBMA location you choose before enrollment.`,
   },
   {
-    q: 'Where is care located?',
-    a: `The address is ${siteInfo.addressLine1}, ${siteInfo.cityStateZip}.`,
+    q: 'How should I choose a location?',
+    a: 'Compare the morning drive, afternoon pickup, child age group, school pickup needs, and the start date you have in mind.',
   },
 ];
 ---
 
 <BaseLayout
-  title="Marietta Child Care and Day Care | Marietta Childcare"
-  description="Marietta child care and day care for infants, toddlers, preschoolers, pre-K children, and school-age children. Schedule a tour or call today."
+  title="BBMA Child Care Locations Near Marietta | Marietta Childcare"
+  description="Compare nearby Big Blue Marble Academy child care and preschool locations around Marietta, GA by commute, age group, schedule, and enrollment fit."
   canonical="/"
 >
   <section class="py-12 lg:py-20">
     <div class="grid items-center gap-10 lg:grid-cols-[1fr_0.9fr]">
       <div class="min-w-0">
         <p class="mb-4 inline-flex rounded-full bg-primary/10 px-4 py-2 text-xs font-black uppercase tracking-widest text-primary">
-          Now enrolling in Marietta
+          BBMA locations near Marietta
         </p>
         <h1 class="max-w-3xl break-words text-4xl font-black leading-tight text-[#111815] sm:text-5xl lg:text-6xl">
-          Child care in Marietta that fits your workday and your child.
+          Find the BBMA child care location that fits your week.
         </h1>
         <p class="mt-6 max-w-2xl text-base leading-relaxed text-[#111815]/75 sm:text-lg">
-          Visit a Marietta early learning location for infants, toddlers, twos, threes, fours, and school-age children. Bring your child's age, start date, and weekly schedule so the conversation starts in the right place.
+          Marietta-area parents can compare nearby Big Blue Marble Academy locations by commute, age group, school pickup, and start date. Start with your drive and your child's age, then choose the location that makes daily care feel workable.
         </p>
         <div class="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
-          <a href="/contact" class="inline-flex w-full items-center justify-center rounded-full bg-primary px-7 py-4 font-bold text-white shadow-lg shadow-primary/20 transition hover:bg-primary/90 sm:w-auto">
-            Schedule a Tour
+          <a href={siteInfo.leadPath} class="inline-flex w-full items-center justify-center rounded-full bg-primary px-7 py-4 font-bold text-white shadow-lg shadow-primary/20 transition hover:bg-primary/90 sm:w-auto">
+            Find a BBMA Location
           </a>
-          <a href={siteInfo.phoneHref} class="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-primary/20 bg-white px-7 py-4 font-bold text-primary transition hover:bg-primary/5 sm:w-auto">
-            <Icon name="phone" class="size-5" />
-            {siteInfo.phoneLabel}
+          <a href="/service-areas" class="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-primary/20 bg-white px-7 py-4 font-bold text-primary transition hover:bg-primary/5 sm:w-auto">
+            <Icon name="map" class="size-5" />
+            Compare Locations
           </a>
         </div>
       </div>
@@ -61,33 +62,63 @@ const homeFaqs = [
 
   <section class="grid gap-4 py-8 md:grid-cols-4">
     <div class="rounded-lg bg-white p-5 shadow-sm">
-      <Icon name="clock" class="mb-3 size-6 text-primary" />
-      <h2 class="font-black">Weekday hours</h2>
-      <p class="mt-1 text-sm text-[#111815]/70">{siteInfo.hoursLabel}</p>
+      <Icon name="map" class="mb-3 size-6 text-primary" />
+      <h2 class="font-black">Closest matches</h2>
+      <p class="mt-1 text-sm text-[#111815]/70">Windy Hill and MacLand Crossing Circle appear first for Marietta.</p>
     </div>
     <div class="rounded-lg bg-white p-5 shadow-sm">
-      <Icon name="map" class="mb-3 size-6 text-primary" />
-      <h2 class="font-black">Marietta location</h2>
-      <p class="mt-1 text-sm text-[#111815]/70">{siteInfo.addressLine1}</p>
+      <Icon name="clock" class="mb-3 size-6 text-primary" />
+      <h2 class="font-black">Commute fit</h2>
+      <p class="mt-1 text-sm text-[#111815]/70">Compare the morning drive and the pickup drive home.</p>
     </div>
     <div class="rounded-lg bg-white p-5 shadow-sm">
       <Icon name="users" class="mb-3 size-6 text-primary" />
       <h2 class="font-black">Age groups</h2>
-      <p class="mt-1 text-sm text-[#111815]/70">Infants through fours, plus school-age care.</p>
+      <p class="mt-1 text-sm text-[#111815]/70">Start with infants through fours, plus school-age needs.</p>
     </div>
     <div class="rounded-lg bg-white p-5 shadow-sm">
       <Icon name="lock" class="mb-3 size-6 text-primary" />
-      <h2 class="font-black">Parent updates</h2>
-      <p class="mt-1 text-sm text-[#111815]/70">Parent app access and daily notes help you follow the day.</p>
+      <h2 class="font-black">Enrollment details</h2>
+      <p class="mt-1 text-sm text-[#111815]/70">Ask BBMA about open space, tour times, and start dates.</p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="mb-10 max-w-3xl">
+      <p class="text-sm font-black uppercase tracking-widest text-primary">Nearby BBMA locations</p>
+      <h2 class="mt-2 text-4xl font-black">Choose by commute first.</h2>
+      <p class="mt-4 text-lg text-[#111815]/70">
+        The best child care location is the one you can reach on ordinary mornings and still pick up from on hard afternoons. These BBMA options are listed from the official Marietta search results.
+      </p>
+    </div>
+    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      {featuredLocations.map((location) => (
+        <a href={location.href} class="rounded-lg border border-[#e4ece8] bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+          <div class="mb-3 flex items-center justify-between gap-3">
+            <Icon name="map" class="size-6 shrink-0 text-primary" />
+            <span class="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary">{location.distance}</span>
+          </div>
+          <h3 class="text-lg font-black leading-snug">{location.name}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-[#111815]/70">{location.addressLine1}<br />{location.cityStateZip}</p>
+          <span class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary">
+            View location details <Icon name="arrow" class="size-4" />
+          </span>
+        </a>
+      ))}
+    </div>
+    <div class="mt-6 text-center">
+      <a href={siteInfo.locationSearchPath} class="inline-flex items-center gap-2 font-bold text-primary">
+        See all nearby BBMA locations <Icon name="arrow" class="size-4" />
+      </a>
     </div>
   </section>
 
   <section class="py-16">
     <div class="mb-10 max-w-3xl">
       <p class="text-sm font-black uppercase tracking-widest text-primary">Programs</p>
-      <h2 class="mt-2 text-4xl font-black">Care for each stage of early childhood.</h2>
+      <h2 class="mt-2 text-4xl font-black">Start with your child's stage.</h2>
       <p class="mt-4 text-lg text-[#111815]/70">
-        The right classroom changes as children grow. Start with your child's age, schedule, and start date, then see how the day would actually work.
+        The right BBMA classroom changes as children grow. Start with your child's age, schedule, and start date, then choose the location that makes the daily routine possible.
       </p>
     </div>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -111,9 +142,9 @@ const homeFaqs = [
       <img src={images.dropoff} alt="Parent hugging child at drop-off" class="h-full min-h-[340px] rounded-xl object-cover shadow-lg" loading="lazy" />
       <div>
         <p class="text-sm font-black uppercase tracking-widest text-primary">Working family logistics</p>
-        <h2 class="mt-2 text-4xl font-black">Start with the practical parts.</h2>
+        <h2 class="mt-2 text-4xl font-black">Location choice is a daily-life choice.</h2>
         <p class="mt-4 text-lg leading-relaxed text-[#111815]/75">
-          Child care has to work in real life: drop-off, pickup, meals, rest, communication, school pickup, tuition, and what happens when your child has a hard day.
+          BBMA has multiple options near Marietta, but the right one still has to work in real life: drop-off, pickup, meals, rest, communication, school pickup, tuition, and what happens when your child has a hard day.
         </p>
         <ul class="mt-6 space-y-3">
           {siteInfo.offerings.map((item) => (
@@ -131,7 +162,7 @@ const homeFaqs = [
     <div class="mb-10 text-center">
       <h2 class="text-4xl font-black">Parent resources</h2>
       <p class="mx-auto mt-4 max-w-2xl text-[#111815]/70">
-        Use these guides to walk into a tour with the right details in mind.
+        Use these guides to walk into a BBMA tour with the right details in mind.
       </p>
     </div>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">

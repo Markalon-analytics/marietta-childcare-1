@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://mariettachildcare.com',
+  site: 'https://marietta-childcare.com',
   integrations: [
     tailwind({
       applyBaseStyles: false,

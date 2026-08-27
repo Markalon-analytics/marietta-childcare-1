@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = 'Ready to see if this care fits your week?',
-  text = 'Bring your child\'s age, start date, and schedule. We will help you picture what the day could look like.',
+  title = 'Ready to choose a BBMA location?',
+  text = 'Bring your child\'s age, start date, and commute. Big Blue Marble Academy can help you find the location that fits your week.',
 } = Astro.props;
 ---
 
@@ -21,10 +21,10 @@ const {
       </div>
       <div class="flex flex-col gap-3 sm:flex-row">
         <a class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 font-bold text-white transition hover:bg-primary/90" href={siteInfo.leadPath}>
-          Schedule a Tour
+          Find a BBMA Location
         </a>
-        <a class="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 font-bold text-white transition hover:bg-white/10" href={siteInfo.phoneHref}>
-          {siteInfo.phoneLabel}
+        <a class="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 font-bold text-white transition hover:bg-white/10" href="/service-areas">
+          Compare Locations
         </a>
       </div>
     </div>

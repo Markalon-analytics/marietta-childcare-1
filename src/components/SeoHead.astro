@@ -15,8 +15,12 @@ const {
   noindex = false
 } = Astro.props;
 
-const siteUrl = Astro.site || 'https://mariettachildcare.com';
-const canonicalURL = new URL(canonical, siteUrl).toString();
+const siteUrl = Astro.site || 'https://marietta-childcare.com';
+const canonicalURLObject = new URL(canonical, siteUrl);
+canonicalURLObject.pathname = canonicalURLObject.pathname === '/'
+  ? '/'
+  : `${canonicalURLObject.pathname.replace(/\/+$/, '')}/`;
+const canonicalURL = canonicalURLObject.toString();
 const ogImageURL = new URL(image, siteUrl).toString();
 ---
 

@@ -1,22 +1,22 @@
 # Marietta Childcare Site Cleanup - Master To-Do Ledger
 
 ## Project Status Summary
-Full-site visual cleanup and parent-first copy rewrite are live on Netlify production.
+Full-site visual cleanup, parent-first copy rewrite, and the light BBMA location-finder update are live on Netlify production.
 
 ## Current Phase
-Production deploy complete
+BBMA location-finder copy update complete
 
 ## Current Active Work
-Ready for production review.
+None active.
 
 ## Queue of Upcoming Tasks
-- Review production and decide whether any follow-up refinements are needed.
+- Monitor live site after domain/DNS changes if requested.
 
 ## In-Progress Work
 - None.
 
 ## QA / Review Queue
-- Optional stakeholder copy review before production deploy.
+- None active.
 
 ## Completed Work
 - Project management files initialized on 2026-06-08 11:39:15.
@@ -36,15 +36,25 @@ Ready for production review.
 - Static browser QA completed on representative desktop/mobile pages from `http://127.0.0.1:8088/`.
 - Deployed parent-first rewrite and mobile hero fix to Netlify production deploy `6a27463277fdc71d2e1fdf52`.
 - Verified production home, contact, downtown Marietta service-area page, unique deploy URL, and contact hero image return `200`.
+- Added shared BBMA location data for Windy Hill, Marietta, Woodstock, Powder Springs, Acworth, Dallas / Paulding, and Dunwoody.
+- Updated public copy to position the site as a light BBMA location-selection helper.
+- Routed primary CTAs, header/nav/footer CTAs, LeadCTA links, and generated related lead links to `https://bbmacademy.com/#awb-open-oc__2662`.
+- Added forced Netlify redirects for `/contact` and `/contact/`, then removed the stale local contact form route.
+- Final BBMA location-finder `npm run build` passed with 57 static pages.
+- Source and built-output scans passed for stale `/contact` hrefs, fake claims, missing icon markers, `expand_more`, and `href="#"`.
+- Built asset/link audit found 57 HTML files, 0 missing image files, 0 hash links, 0 `/contact` hrefs, and 346 BBMA form links.
+- Claude Writing Style metrics passed anti-pattern, hedge, em-dash, and public-generated-copy hard gates; entity/rhythm warnings were reviewed as local-SEO/page-card artifacts.
+- Browser QA passed on home, about, programs, FAQ, one program page, one solution page, one resource page, service-area index, and Downtown Marietta at desktop and mobile widths.
+- Deployed to Netlify production deploy `6a28c5d8433a4d59a6c5edfc`; verified `https://marietta-childcare.com/` returns `200` and `/contact` plus `/contact/` return `302` to the BBMA form.
 
 ## Blockers / Decisions Needed
 - None active.
 
 ## Last Significant Progress
-Completed production deploy of the parent-first rewrite and verified live routes/assets.
+Completed and deployed the BBMA location-finder update to Netlify production.
 
 ## Immediate Next Actions
-- Review `https://mariettachildcare.netlify.app/`.
+- None.
 
 ## Resume Instructions
 Read `context/CURRENT_STATE.md`, then this file, then the active task files.

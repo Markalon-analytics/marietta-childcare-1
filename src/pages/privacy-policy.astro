@@ -1,12 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
-import { images, siteInfo } from '../data/site';
+import { images } from '../data/site';
 ---
 
 <BaseLayout
   title="Privacy Policy | Marietta Childcare"
-  description="Privacy policy for MariettaChildCare.com tour requests and parent inquiries."
+  description="Privacy policy for parent location-selection information and BBMA tour inquiries."
 >
   <PageHero
     title="Privacy Policy"
@@ -17,10 +17,10 @@ import { images, siteInfo } from '../data/site';
 
   <section class="prose prose-lg max-w-3xl py-16">
     <h2>Information you share</h2>
-    <p>When you submit a tour request, we may receive your name, phone number, email address, your child's age range, desired timing, and the message you include.</p>
+    <p>When you compare locations or follow a BBMA tour link, you may choose to share your name, phone number, email address, your child's age range, desired timing, and the message you include.</p>
     <h2>How the information is used</h2>
-    <p>We use that information to respond to your inquiry, answer questions about care, and help schedule a tour. We do not sell parent inquiry information.</p>
+    <p>We use that information to respond to your inquiry, answer questions about care, and help with the location-selection process. We do not sell parent inquiry information.</p>
     <h2>Contact</h2>
-    <p>Call <a href={siteInfo.phoneHref}>{siteInfo.phoneLabel}</a> if you have a question about a tour request or information you submitted.</p>
+    <p>Follow the BBMA tour link if you have a question about choosing a location or information you submitted through BBMA.</p>
   </section>
 </BaseLayout>

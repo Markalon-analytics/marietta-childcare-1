@@ -1,26 +1,26 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
-import { images, siteInfo } from '../data/site';
+import { images } from '../data/site';
 ---
 
 <BaseLayout
   title="Terms | Marietta Childcare"
-  description="Terms for using MariettaChildCare.com."
+  description="Terms for comparing nearby BBMA child care locations through Marietta Childcare."
 >
   <PageHero
     title="Terms"
-    description="This site helps you request child care information and schedule a local tour conversation."
+    description="Review how location-selection information and BBMA tour links are handled."
     image={images.classroom}
     eyebrow="Site policy"
   />
 
   <section class="prose prose-lg max-w-3xl py-16">
-    <h2>Site use</h2>
-    <p>MariettaChildCare.com provides child care information for parents comparing local options. Site content is informational and does not guarantee enrollment, open classroom space, tuition, or specific classroom placement.</p>
+    <h2>Information use</h2>
+    <p>Parents comparing nearby BBMA options should treat the information here as guidance, not a guarantee of enrollment, open classroom space, tuition, or specific classroom placement.</p>
     <h2>Tour requests</h2>
-    <p>Submitting a form starts a conversation. Open classroom space, age groups, schedule options, and pricing must be confirmed directly before enrollment.</p>
+    <p>Following a tour or enrollment link starts a conversation with BBMA. Open classroom space, age groups, schedule options, and pricing must be confirmed directly before enrollment.</p>
     <h2>Contact</h2>
-    <p>Call <a href={siteInfo.phoneHref}>{siteInfo.phoneLabel}</a> for current information.</p>
+    <p>Use the official BBMA tour link for current location and enrollment information.</p>
   </section>
 </BaseLayout>

@@ -16,11 +16,11 @@ const currentYear = new Date().getFullYear();
           <h2 class="text-xl font-bold">Marietta Childcare</h2>
         </div>
         <p class="text-[#111815]/60 dark:text-white/60 mb-6 leading-relaxed">
-          Child care and early learning in Marietta for infants, toddlers, twos, threes, fours, and school-age children.
+          A parent-first guide to nearby Big Blue Marble Academy child care and preschool locations around Marietta.
         </p>
-        <a class="inline-flex items-center gap-2 text-primary hover:text-primary/70 transition-colors" href={siteInfo.phoneHref}>
-          <Icon name="phone" class="size-4" />
-          {siteInfo.phoneLabel}
+        <a class="inline-flex items-center gap-2 text-primary hover:text-primary/70 transition-colors" href={siteInfo.leadPath}>
+          <Icon name="map" class="size-4" />
+          Find a BBMA Location
         </a>
       </div>
 
@@ -69,12 +69,11 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <div>
-        <h4 class="font-black text-lg mb-6">Contact Us</h4>
+        <h4 class="font-black text-lg mb-6">Find a Location</h4>
         <ul class="space-y-3 text-sm text-[#111815]/70 dark:text-white/70">
-          <li>{siteInfo.addressLine1}<br />{siteInfo.cityStateZip}</li>
-          <li><a href={siteInfo.phoneHref} class="hover:text-primary transition-colors">{siteInfo.phoneLabel}</a></li>
-          <li>{siteInfo.hoursLabel}</li>
-          <li><a href="/contact" class="hover:text-primary transition-colors font-bold">Schedule a Tour</a></li>
+          <li>Compare BBMA locations near Marietta, Woodstock, Powder Springs, Acworth, Dallas, and Dunwoody.</li>
+          <li><a href="/service-areas" class="hover:text-primary transition-colors">View location guide</a></li>
+          <li><a href={siteInfo.leadPath} class="hover:text-primary transition-colors font-bold">Schedule a Tour</a></li>
         </ul>
       </div>
     </div>

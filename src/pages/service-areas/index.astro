@@ -3,32 +3,24 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Icon from '../../components/Icon.astro';
 import LeadCTA from '../../components/LeadCTA.astro';
 import PageHero from '../../components/PageHero.astro';
-import { images, serviceAreaPages, siteInfo } from '../../data/site';
+import { bbmaLocations, images, serviceAreaPages, siteInfo } from '../../data/site';
 
 const areaSchema = {
   '@context': 'https://schema.org',
-  '@type': 'ChildCare',
+  '@type': 'WebSite',
   name: 'Marietta Childcare',
-  telephone: siteInfo.phoneLabel,
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: siteInfo.addressLine1,
-    addressLocality: 'Marietta',
-    addressRegion: 'GA',
-    postalCode: '30008',
-    addressCountry: 'US',
-  },
-  areaServed: ['Marietta', 'Kennesaw', 'Smyrna', 'Cobb County'],
+  url: 'https://marietta-childcare.com/service-areas/',
+  about: 'BBMA child care location selection near Marietta, Georgia',
 };
 ---
 
 <BaseLayout
-  title="Marietta Child Care Service Areas | Marietta Childcare"
-  description="Child care service-area information for Marietta, Cobb County, Kennesaw, Smyrna, and nearby parents comparing a Marietta location."
+  title="BBMA Locations Near Marietta | Marietta Childcare"
+  description="Compare nearby Big Blue Marble Academy locations around Marietta, Cobb County, Woodstock, Powder Springs, Acworth, Dallas, and Dunwoody."
 >
   <PageHero
-    title="Child Care Near Marietta and Cobb County"
-    description="Care is located at 2040 MacLand Crossing Circle in Marietta. Use these area pages to think through commute, school pickup, and program fit."
+    title="BBMA Locations Near Marietta"
+    description="Choose the Big Blue Marble Academy location that fits your commute, school pickup needs, child care hours, and start date."
     image={images.play}
     eyebrow="Service areas"
   />
@@ -37,7 +29,7 @@ const areaSchema = {
     <div class="mb-10 max-w-3xl">
       <h2 class="text-4xl font-black">Start with the real address.</h2>
       <p class="mt-4 text-lg leading-relaxed text-[#111815]/75">
-        The practical question is whether this Marietta address works for your route, school pickup, child care hours, and start date.
+        The practical question is not just whether a location is near Marietta. It is whether a BBMA address works for your morning drive, your pickup window, and the age group your child needs now.
       </p>
     </div>
 
@@ -57,11 +49,24 @@ const areaSchema = {
 
   <section class="pb-16">
     <div class="rounded-lg bg-white p-8 shadow-sm">
-      <h2 class="text-3xl font-black">Local facts</h2>
-      <div class="mt-6 grid gap-5 md:grid-cols-3">
-        <p class="flex gap-3 text-[#111815]/75"><Icon name="map" class="mt-1 size-5 shrink-0 text-primary" /> {siteInfo.addressLine1}, {siteInfo.cityStateZip}</p>
-        <p class="flex gap-3 text-[#111815]/75"><Icon name="clock" class="mt-1 size-5 shrink-0 text-primary" /> {siteInfo.hoursLabel}</p>
-        <p class="flex gap-3 text-[#111815]/75"><Icon name="phone" class="mt-1 size-5 shrink-0 text-primary" /> <a href={siteInfo.phoneHref} class="font-bold text-primary">{siteInfo.phoneLabel}</a></p>
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-black">Nearby BBMA location options</h2>
+        <p class="mt-3 text-[#111815]/70">
+          These are the BBMA locations returned by the official Marietta search. Use the list to compare distance, address, and which school details you want to review before scheduling.
+        </p>
+      </div>
+      <div class="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {bbmaLocations.map((location) => (
+          <a href={location.href} class="rounded-lg border border-[#e4ece8] p-5 transition hover:-translate-y-1 hover:shadow-md">
+            <div class="flex items-center justify-between gap-3">
+              <Icon name="map" class="size-6 shrink-0 text-primary" />
+              <span class="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary">{location.distance}</span>
+            </div>
+            <h3 class="mt-3 text-lg font-black">{location.name}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-[#111815]/70">{location.addressLine1}<br />{location.cityStateZip}</p>
+            <p class="mt-3 text-sm font-bold text-primary">{location.phoneLabel}</p>
+          </a>
+        ))}
       </div>
     </div>
   </section>

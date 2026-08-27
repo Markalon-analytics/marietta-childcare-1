@@ -1,0 +1,37 @@
+version: 1
+task: RELEASE-001
+requirements:
+  - REQ-URL-01
+  - REQ-CAN-01
+  - REQ-REPORT-01
+outcome: Commit the audited URL/canonical fixes and publish the current site build.
+state: READY
+owns:
+  - repository working tree
+  - git commit
+  - Netlify production publish
+dependencies:
+  - name: audit-remediation
+    status: VERIFIED
+    evidence: url-canonical-audit.md
+inputs:
+  - PROJECT.md
+  - PLAN.md
+  - GATES.md
+  - url-canonical-audit.md
+  - current git working tree
+constraints:
+  - Preserve the current user changes in the working tree.
+  - Do not deploy until the final build and diff checks pass.
+  - Do not alter credentials or unrelated external systems.
+deliverables:
+  - one git commit on the current branch
+  - one Netlify production deployment
+checks:
+  - npm run build
+  - git diff --check
+  - deployed homepage, sitemap, and representative canonical verification
+escalation:
+  - Stop if the remote, Netlify site, or production target cannot be verified.
+  - Stop if build or deployment fails after two changed retries.
+handoff: evidence/release-verification.md
