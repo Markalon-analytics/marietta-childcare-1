@@ -18,7 +18,7 @@ const { page } = Astro.props;
           <Icon name="check" class="size-5" />
         </div>
         <h2 class="mb-3 text-2xl font-black leading-tight text-[#111815]">{section.title}</h2>
-        <p class="leading-relaxed text-[#111815]/75">{section.body}</p>
+        <p class="leading-relaxed text-[#111815]/75" set:html={section.body} />
         {section.bullets && (
           <ul class="mt-5 space-y-3">
             {section.bullets.map((item) => (
